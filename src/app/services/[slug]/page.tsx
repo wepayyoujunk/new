@@ -155,7 +155,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { step: "1", title: "Call & Describe", desc: `Call ${PHONE} and describe your ${service.title.toLowerCase()} job — what items need to go, how many, and any access challenges. We confirm the starting at $100/hr rate and schedule your appointment. Same-day available before noon.` },
+              { step: "1", title: "Call & Describe", desc: `Call ${PHONE} and describe your ${service.title.toLowerCase()} job — what items need to go, how many, and any access challenges. We confirm pricing and schedule your appointment. Same-day available before noon.` },
               { step: "2", title: "We Show Up", desc: `Your crew arrives in a branded truck within the 2-hour window. They walk through the job with you, confirm the scope, and start loading immediately. Items are sorted as they go — valuables set aside for appraisal.` },
               { step: "3", title: "Appraise & Credit", desc: `Every item with resale value gets appraised at current fair market rates. You see the valuation, understand the basis, and approve before credit is applied. 50% of appraised value goes directly to reducing your bill.` },
               { step: "4", title: "Pay Less or Get Paid", desc: `Credits are subtracted from total hours worked. If credits exceed the bill, we pay you the difference on the spot by check or digital transfer. Final walkthrough ensures your space is clean and clear.` },

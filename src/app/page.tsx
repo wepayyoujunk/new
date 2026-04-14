@@ -35,7 +35,7 @@ export default function HomePage() {
             Junk Removal That Pays You Back
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
-            We Come to You — We Pay You for Your Stuff. Our crew loads, hauls, and disposes of your junk at a flat starting at $100/hr with dump fees included. Items with resale value? We credit you 50% (when applicable) toward your bill. If credits exceed the total, we cut you a check.
+            We Come to You — We Pay You for Your Stuff. Our crew loads, hauls, and disposes of your junk starting at $100/hr — dump fees included (an industry first). Items with resale value? We credit you 50% (when applicable) toward your bill. If credits exceed the total, we cut you a check.
           </p>
 
           {/* Stat cards */}
@@ -277,7 +277,7 @@ export default function HomePage() {
           </p>
           <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: "Simple Pricing", desc: "starting at $100/hr flat rate with dump fees included. No volume charges, no hidden fees, no surprises. You know exactly what you pay before we start." },
+              { title: "Simple Pricing", desc: "rates starting at $100/hr — dump fees included (an industry first). No volume charges, no hidden fees, no surprises. You know exactly what you pay before we start." },
               { title: "50% Resale Credit (when applicable)", desc: "Every item with resale value earns you a 50% credit toward your bill. Furniture, appliances, electronics, tools — it all counts." },
               { title: "You Can Get Paid", desc: "If your credits exceed the bill, we write you a check. Estate cleanouts and office jobs regularly result in a payout to the customer." },
               { title: "Same-Day Service", desc: "Call before noon and we can usually have a crew at your door within 2-4 hours. Available 7 days a week, including holidays." },
@@ -349,7 +349,7 @@ export default function HomePage() {
           </p>
           <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { step: "1", title: "Call or Book Online", desc: "Tell us what you need hauled. We confirm the starting at $100/hr rate, estimate the time, and schedule your crew." },
+              { step: "1", title: "Call or Book Online", desc: "Tell us what you need hauled. We confirm pricing, estimate the time, and schedule your crew." },
               { step: "2", title: "Crew Shows Up", desc: "Our local crew arrives at your property on time. Quick walkthrough to confirm what goes and what stays." },
               { step: "3", title: "Load & Appraise", desc: "We load everything onto the truck. Items with resale value get appraised on the spot — you approve every credit." },
               { step: "4", title: "Pay Less or Get Paid", desc: "Credits come off your bill. If credits exceed the total, we hand you a check. Payment processed on the spot." },
@@ -408,7 +408,7 @@ export default function HomePage() {
             We Pay You Junk vs. Every Other Junk Removal Company
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
-            Compare our <Link href="/pricing" className="text-teal-600 underline">starting at $100/hr flat rate</Link> to volume-based pricing from other companies.
+            Compare our <Link href="/pricing" className="text-teal-600 underline">rates starting at $100/hr</Link> to volume-based pricing from other companies.
             See real math on <Link href="/services/estate-cleanouts" className="text-teal-600 underline">estate cleanouts</Link>,{" "}
             <Link href="/services/garage-cleanouts" className="text-teal-600 underline">garage cleanouts</Link>, and{" "}
             <Link href="/services/office-cleanouts" className="text-teal-600 underline">office cleanouts</Link> that proves the difference.
@@ -418,7 +418,7 @@ export default function HomePage() {
               The junk removal industry has a pricing problem. Most companies charge by the volume of space your stuff takes up on their truck. A quarter-truck load might be $250, a half truck $400, a full truck $600 or more. The problem is not just the price — it is the incentive structure. Volume pricing incentivizes the company to cram as much as possible onto one truck, estimate high, and move fast. It also means they profit twice: once from the fee you pay, and again from reselling your valuable items.
             </p>
             <p>
-              Our model eliminates both problems. Hourly pricing means we only charge for the time we actually work. If the job takes 90 minutes, you pay for 90 minutes at starting at $100/hr — that is $150. A volume-based company would charge you $350-$500 for the same load. And because our business model depends on resale revenue, we have a direct financial incentive to identify and properly handle valuable items. We split that value with you 50/50 instead of keeping it all.
+              Our model eliminates both problems. Hourly pricing means we only charge for the time we actually work. If the job takes 90 minutes, you pay for 90 minutes starting at $100/hr — that is $150. A volume-based company would charge you $350-$500 for the same load. And because our business model depends on resale revenue, we have a direct financial incentive to identify and properly handle valuable items. We split that value with you 50/50 instead of keeping it all.
             </p>
             <p>
               Consider a real scenario. You have a garage full of stuff — old workbench, some power tools, a lawn mower, three bikes, a dozen boxes of random items, and general clutter. A volume-based company quotes you $450 for a full truck. Our crew clears it in 2 hours ($200), identifies $360 in resale value from the tools, workbench, and bikes, credits you $180, and your final bill is $20. That is not a hypothetical — it is a real customer story from Austin, Texas.
@@ -669,19 +669,22 @@ export default function HomePage() {
           </p>
           <div className="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-slate-700">
             <p>
-              <strong>Residential:</strong> This is where most of our calls come from. A homeowner has a garage that has not been cleaned in five years, a basement full of boxes from two moves ago, or an attic crammed with stuff nobody remembers storing. Our crew pulls up to your property, walks through the space with you, and clears everything you want gone. The average residential job takes 1-3 hours and the resale credits from furniture, tools, and electronics typically cut the bill by 40-60%.
+              <strong>Residential:</strong> This is where most of our calls come from. A homeowner has a <Link href="/services/garage-cleanouts" className="text-teal-600 underline">garage</Link> that hasn&apos;t been cleaned in five years, a <Link href="/services/basement-cleanouts" className="text-teal-600 underline">basement</Link> full of boxes from two moves ago, or an <Link href="/services/attic-cleanouts" className="text-teal-600 underline">attic</Link> crammed with stuff nobody remembers storing. We also handle <Link href="/services/hoarder-cleanouts" className="text-teal-600 underline">hoarder cleanouts</Link> with sensitivity and <Link href="/services/storage-unit-cleanouts" className="text-teal-600 underline">storage unit clearing</Link> to stop monthly rent on stuff you don&apos;t need.
             </p>
             <p>
-              <strong>Estate Cleanouts:</strong> When a family member passes or a property needs to be completely emptied, the scale jumps significantly. Estate jobs involve every room, every closet, every cabinet. A lifetime of belongings. This is where our credit model delivers the most value — estate properties are full of furniture sets, appliances, vintage items, collectibles, and tools that have substantial resale markets. Our crews handle estate work with respect and thoroughness, and the credits regularly cover the entire bill.
+              <strong>Estate Cleanouts:</strong> When a family member passes or a property needs to be completely emptied, <Link href="/services/estate-cleanouts" className="text-teal-600 underline">estate cleanouts</Link> involve every room, every closet, every cabinet. A lifetime of belongings. This is where our credit model delivers the most value — estates are full of furniture sets, appliances, vintage items, collectibles, and tools. Credits regularly cover the entire bill. Read more on our <Link href="/blog" className="text-teal-600 underline">blog</Link>.
             </p>
             <p>
-              <strong>Commercial:</strong> Office closures, retail remodels, warehouse clearing, and hotel FF&amp;E replacement — commercial jobs generate large volumes of items with strong resale markets. Herman Miller chairs, standing desks, conference tables, commercial kitchen equipment, IT hardware — all of it has value and all of it earns you credit. We work after hours to minimize business disruption and coordinate with property managers for recurring service.
+              <strong>Single Items &amp; Specialty:</strong> Don&apos;t need a full cleanout? We pick up individual items — <Link href="/services/mattress-removal" className="text-teal-600 underline">mattresses</Link>, <Link href="/services/refrigerator-removal" className="text-teal-600 underline">refrigerators</Link>, <Link href="/services/exercise-equipment-removal" className="text-teal-600 underline">exercise equipment</Link>, <Link href="/services/piano-removal" className="text-teal-600 underline">pianos</Link>, <Link href="/services/hot-tub-removal" className="text-teal-600 underline">hot tubs</Link>, <Link href="/services/pool-table-removal" className="text-teal-600 underline">pool tables</Link>, and <Link href="/services/tire-removal" className="text-teal-600 underline">tires</Link>. Most single-item pickups take under an hour.
             </p>
             <p>
-              <strong>Construction &amp; Demolition:</strong> Drywall, lumber, concrete, tile, old fixtures — renovation and construction debris is bulky and heavy. We haul it all at the same starting at $100/hr rate with dump fees included. No dumpster rental, no loading it yourself, no multiple trips to the dump. Salvageable materials like hardwood flooring, solid wood cabinets, and scrap metal earn resale credit.
+              <strong>Commercial:</strong> <Link href="/services/office-cleanouts" className="text-teal-600 underline">Office closures</Link>, <Link href="/services/retail-cleanouts" className="text-teal-600 underline">retail remodels</Link>, <Link href="/services/warehouse-cleanouts" className="text-teal-600 underline">warehouse clearing</Link>, and <Link href="/services/hotel-cleanouts" className="text-teal-600 underline">hotel FF&amp;E replacement</Link> — <Link href="/commercial" className="text-teal-600 underline">commercial jobs</Link> generate large volumes of items with strong resale markets. We also serve <Link href="/services/church-nonprofit-cleanouts" className="text-teal-600 underline">churches and nonprofits</Link> and <Link href="/services/school-university-cleanouts" className="text-teal-600 underline">schools and universities</Link>. We work after hours and coordinate with property managers for recurring service.
             </p>
             <p>
-              <strong>Property Management:</strong> Tenant turnovers are a recurring reality for property managers and landlords. Left-behind furniture, appliances, personal belongings, and general trash need to be cleared before the next tenant moves in. We provide fast-turnaround cleanouts with consistent crew assignments, priority scheduling, and credits on valuable items left behind that reduce your per-unit costs.
+              <strong>Construction &amp; Yard:</strong> <Link href="/services/construction-debris-removal" className="text-teal-600 underline">Construction debris</Link>, <Link href="/services/renovation-waste-removal" className="text-teal-600 underline">renovation waste</Link>, <Link href="/services/yard-waste-removal" className="text-teal-600 underline">yard waste</Link>, <Link href="/services/carpet-flooring-removal" className="text-teal-600 underline">carpet and flooring</Link>, and <Link href="/services/scrap-metal-removal" className="text-teal-600 underline">scrap metal</Link> — all hauled at our hourly rate with dump fees included. No dumpster rental needed.
+            </p>
+            <p>
+              <strong>Property Management:</strong> <Link href="/services/foreclosure-cleanouts" className="text-teal-600 underline">Foreclosure cleanouts</Link> and <Link href="/services/property-management-cleanouts" className="text-teal-600 underline">tenant turnovers</Link> are a recurring reality. We provide fast-turnaround cleanouts with consistent crew assignments, priority scheduling, and credits on valuable items left behind. <Link href="/careers" className="text-teal-600 underline">We&apos;re also hiring</Link> — $50/hr starting pay, <Link href="/apply-for-junk-removal-job" className="text-teal-600 underline">apply today</Link>.
             </p>
           </div>
         </div>
@@ -814,13 +817,13 @@ export default function HomePage() {
             Common Pricing Questions — Straight Answers
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
-            No hidden fees, no estimates. Read about our <Link href="/pricing" className="text-teal-600 underline">starting at $100/hr rate</Link>,{" "}
+            No hidden fees, no estimates. Read about our <Link href="/pricing" className="text-teal-600 underline">rates starting at $100/hr</Link>,{" "}
             <Link href="/faq" className="text-teal-600 underline">credit system FAQ</Link>, and how{" "}
             <Link href="/book-junk-removal-service-today" className="text-teal-600 underline">booking works</Link>.
           </p>
           <div className="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-slate-700">
             <p>
-              <strong>Is starting at $100/hr really all-inclusive?</strong> Yes. The starting at $100/hr rate covers labor, truck, loading, hauling, and dump fees. There are no additional charges for heavy items, stairs, long carries, or disposal. The only cost is hours worked at starting at $100/hr with a 1-hour minimum.
+              <strong>Is our pricing really all-inclusive?</strong> Yes. Our starting rate covers labor, truck, loading, hauling, and dump fees. There are no additional charges for heavy items, stairs, long carries, or disposal. The only cost is hours worked starting at $100/hr with a 1-hour minimum.
             </p>
             <p>
               <strong>What if my job takes less than an hour?</strong> The minimum charge is 1 hour ($100). If our crew finishes in 40 minutes, you pay $100. Most single-item pickups and small loads take less than an hour, so the minimum applies. For larger jobs, we round to the nearest 15-minute increment.
@@ -951,13 +954,13 @@ export default function HomePage() {
               <strong>Online:</strong> Visit our <Link href="/book-junk-removal-service-today" className="text-teal-600 underline">booking page</Link> and fill out the quick form — your name, address, what you need hauled, and your preferred date and time. We confirm within 30 minutes during business hours. The form takes about 2 minutes.
             </p>
             <p>
-              <strong>Phone:</strong> Call us at {PHONE}. Our scheduling team answers {HOURS}, seven days a week. We ask about your job (what types of items, approximate volume, access details), confirm the starting at $100/hr rate, estimate the time, and schedule your crew. The call takes about 5 minutes.
+              <strong>Phone:</strong> Call us at {PHONE}. Our scheduling team answers {HOURS}, seven days a week. We ask about your job (what types of items, approximate volume, access details), confirm pricing, estimate the time, and schedule your crew. The call takes about 5 minutes.
             </p>
             <p>
               <strong>Text:</strong> Text us at the same number. Send a quick description or photos of what you need hauled. We reply with a time estimate and available appointment slots. Great for people who prefer not to call.
             </p>
             <p>
-              <strong>Same-Day Service:</strong> Call or book before noon and we can typically have a crew at your door within 2-4 hours. Same-day availability depends on crew scheduling in your market, but we accommodate it in 80%+ of requests. No rush charges, no premium pricing — same starting at $100/hr rate.
+              <strong>Same-Day Service:</strong> Call or book before noon and we can typically have a crew at your door within 2-4 hours. Same-day availability depends on crew scheduling in your market, but we accommodate it in 80%+ of requests. No rush charges, no premium pricing — same starting rate.
             </p>
           </div>
         </div>
@@ -983,10 +986,10 @@ export default function HomePage() {
               We serve {CITY_COUNT} cities across all {STATE_COUNT} states from strategically located offices around the country. Each office dispatches local crews — people who live in your community, know the neighborhoods, understand the local disposal facilities, and have relationships with regional resale shops and donation centers. This local expertise means faster service, more accurate appraisals, and higher credits for your items.
             </p>
             <p>
-              Our national infrastructure means consistent quality regardless of where you are. The same starting at $100/hr rate applies in New York City and rural Montana. The same 50% Resale Credit (when applicable) model works in Miami and Minneapolis. The same training standards apply to every crew member in every market. Whether you are in a dense urban center or a suburban neighborhood, you get the same professional junk removal experience.
+              Our national infrastructure means consistent quality regardless of where you are. The same starting rate applies in New York City and rural Montana. The same 50% Resale Credit (when applicable) model works in Miami and Minneapolis. The same training standards apply to every crew member in every market. Whether you are in a dense urban center or a suburban neighborhood, you get the same professional junk removal experience.
             </p>
             <p>
-              Not sure if we cover your area? Call us at {PHONE} or check our <Link href="/locations" className="text-teal-600 underline">locations page</Link>. With {CITY_COUNT} cities and growing, there is a strong chance we have a local crew ready to serve you today.
+              Not sure if we cover your area? Call us at {PHONE} or check our <Link href="/locations" className="text-teal-600 underline">locations page</Link>. With {CITY_COUNT} cities and growing, there is a strong chance we have a local crew ready to serve you today. Interested in owning a We Pay You location? See our <Link href="/franchise" className="text-teal-600 underline">franchise opportunity</Link>.
             </p>
           </div>
         </div>
@@ -1002,7 +1005,7 @@ export default function HomePage() {
             Shed, Fence, and Deck Removal — Full Demo Included
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
-            We tear down and haul away outdoor structures at the same starting at $100/hr rate.{" "}
+            We tear down and haul away outdoor structures at the same starting rate.{" "}
             <Link href="/services/shed-removal" className="text-teal-600 underline">Sheds</Link>,{" "}
             <Link href="/services/fence-removal" className="text-teal-600 underline">fences</Link>,{" "}
             <Link href="/services/deck-removal" className="text-teal-600 underline">decks</Link>, and{" "}
@@ -1010,7 +1013,7 @@ export default function HomePage() {
           </p>
           <div className="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-slate-700">
             <p>
-              Structure removal is a common need that most junk companies either do not offer or charge a premium for. Old sheds rotting in the backyard, fences that have seen better decades, decks with soft boards and wobbly railings — they need to come down, and you need someone who will tear them apart, load the debris, and haul it away. That is what we do, at the same starting at $100/hr rate with dump fees included.
+              Structure removal is a common need that most junk companies either do not offer or charge a premium for. Old sheds rotting in the backyard, fences that have seen better decades, decks with soft boards and wobbly railings — they need to come down, and you need someone who will tear them apart, load the debris, and haul it away. That is what we do, at the same starting rate with dump fees included.
             </p>
             <p>
               <strong>Sheds &amp; Playhouses:</strong> Our crew demolishes the walls, roof, floor, and foundation — everything. Average shed removal takes 2-3 hours depending on size and construction. We leave the ground clear and clean. Metal sheds have scrap value that earns you credit.
@@ -1036,7 +1039,7 @@ export default function HomePage() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
             <Link href="/services/construction-debris-removal" className="text-teal-600 underline">Construction debris</Link>,{" "}
-            <Link href="/services/renovation-waste-removal" className="text-teal-600 underline">renovation waste</Link>, and jobsite cleanup — all at starting at $100/hr.{" "}
+            <Link href="/services/renovation-waste-removal" className="text-teal-600 underline">renovation waste</Link>, and jobsite cleanup — all starting at $100/hr.{" "}
             <Link href="/contact-we-pay-you-junk-removal-today" className="text-teal-600 underline">Contact us</Link> for contractor scheduling.
           </p>
           <div className="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-slate-700">
@@ -1044,7 +1047,7 @@ export default function HomePage() {
               Dumpster rental sounds convenient until you factor in the real costs: the rental fee ($300-$600/week), the weight overage charges, the permit if it sits on the street, the time you spend loading it yourself, and the 3-7 day window where an ugly metal box sits in your driveway. Then there are the restrictions — most dumpster companies have long lists of materials they will not accept, including concrete, dirt, roofing, and hazardous materials.
             </p>
             <p>
-              Our construction debris service eliminates all of that. We show up, load the debris ourselves, and haul it away the same day. Drywall, lumber, concrete, tile, roofing materials, old fixtures, pipe, wire — we take it all. The starting at $100/hr rate includes the labor, the truck, and the dump fees. No rental period, no weight limits, no driveway eyesore, no loading it yourself.
+              Our construction debris service eliminates all of that. We show up, load the debris ourselves, and haul it away the same day. Drywall, lumber, concrete, tile, roofing materials, old fixtures, pipe, wire — we take it all. Our starting rate includes the labor, the truck, and the dump fees. No rental period, no weight limits, no driveway eyesore, no loading it yourself.
             </p>
             <p>
               For contractors with ongoing projects, we offer recurring pickups — schedule us to swing by every few days or once a week to clear accumulated debris. This keeps your jobsite clean without the hassle of coordinating dumpster swaps. Salvageable materials like hardwood flooring, solid wood cabinets, copper pipe, and scrap metal earn resale credits that reduce your hauling costs.
@@ -1092,7 +1095,7 @@ export default function HomePage() {
             Ready to Get Paid for Your Junk?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
-            starting at $100/hr flat rate. Dump fees included (an industry first). 50% Resale Credit (when applicable) on items with value. {CITY_COUNT} cities, all {STATE_COUNT} states, {HOURS}. Book online, call, or text — same-day service available.
+            rates starting at $100/hr. Dump fees included (an industry first). 50% Resale Credit (when applicable) on items with value. {CITY_COUNT} cities, all {STATE_COUNT} states, {HOURS}. Book online, call, or text — same-day service available.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a href={SMS_HREF}>

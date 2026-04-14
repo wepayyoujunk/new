@@ -38,7 +38,7 @@ export default function BookPage() {
               <div className="mt-6 space-y-6">
                 {[
                   { step: "1", title: "Fill Out the Form", desc: "Tell us your name, number, and what you need removed. Takes 60 seconds." },
-                  { step: "2", title: "We Call You", desc: "Our team calls to confirm the starting at $100/hr rate, 1 hour minimum, and schedule your pickup." },
+                  { step: "2", title: "We Call You", desc: "Our team calls to confirm pricing, 1 hour minimum, and schedule your pickup." },
                   { step: "3", title: "We Show Up", desc: "Our crew arrives, loads your items, and appraises anything with resale value on the spot." },
                   { step: "4", title: "You Pay Less or Get Paid", desc: "50% Resale Credit (when applicable)s reduce your bill. If credits exceed the bill, we pay you the difference." },
                 ].map((item) => (
