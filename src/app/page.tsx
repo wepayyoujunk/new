@@ -38,19 +38,27 @@ export default function HomePage() {
             We Come to You — We Pay You for Your Stuff. Our crew loads, hauls, and disposes of your junk starting at $100/hr — dump fees included (an industry first). Items with resale value? We credit you 50% (when applicable) toward your bill. If credits exceed the total, we cut you a check.
           </p>
 
-          {/* Stat cards */}
-          <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
-            <div className="rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur">
+          {/* Trust stat cards */}
+          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur text-center">
               <p className="text-3xl font-bold text-white font-heading">{HOURS}</p>
-              <p className="mt-1 text-sm text-teal-200 font-cta">Open Every Day</p>
+              <p className="mt-1 text-sm font-semibold text-teal-200 font-cta">7 Days a Week</p>
+              <p className="mt-1 text-xs text-white/50">Including weekends &amp; holidays</p>
             </div>
-            <div className="rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur">
+            <div className="rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur text-center">
               <p className="text-3xl font-bold text-white font-heading">{RATING} Stars</p>
-              <p className="mt-1 text-sm text-teal-200 font-cta">{REVIEW_COUNT} Reviews</p>
+              <p className="mt-1 text-sm font-semibold text-teal-200 font-cta">{REVIEW_COUNT} Verified Reviews</p>
+              <p className="mt-1 text-xs text-white/50">Real customers, real results</p>
             </div>
-            <div className="rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur">
+            <div className="rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur text-center">
               <p className="text-3xl font-bold text-white font-heading">From $100</p>
-              <p className="mt-1 text-sm text-teal-200 font-cta">Dump Fees Included</p>
+              <p className="mt-1 text-sm font-semibold text-teal-200 font-cta">Dump Fees Included</p>
+              <p className="mt-1 text-xs text-white/50">An industry first — no add-ons</p>
+            </div>
+            <div className="rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur text-center">
+              <p className="text-3xl font-bold text-white font-heading">{CITY_COUNT}+</p>
+              <p className="mt-1 text-sm font-semibold text-teal-200 font-cta">Cities Nationwide</p>
+              <p className="mt-1 text-xs text-white/50">Local crews in every state</p>
             </div>
           </div>
 
@@ -382,18 +390,23 @@ export default function HomePage() {
           </p>
           <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: "Homeowners", desc: "Garages, basements, attics, whole-house cleanouts. Your old stuff has value and we make sure you benefit from it." },
-              { title: "Renters", desc: "Moving out and need the apartment cleared? We haul everything and credit you for furniture and appliances." },
-              { title: "Property Managers", desc: "Fast tenant turnovers with credits on items left behind. Recurring service with consistent crews and priority scheduling." },
-              { title: "Realtors", desc: "Get properties market-ready fast. Estate and foreclosure cleanouts are our specialty — credits keep your costs low." },
-              { title: "Businesses", desc: "Office cleanouts, retail closures, warehouse clearing. Commercial furniture and equipment earn serious resale credits." },
-              { title: "Estate Managers", desc: "A lifetime of belongings means a property full of hidden value. Our appraisals regularly cover the entire bill and then some." },
+              { title: "Homeowners", desc: "Garages, basements, attics, whole-house cleanouts. Your old furniture, tools, appliances, and electronics have real resale value — we make sure you get your cut. The average homeowner saves 25-40% compared to flat-rate haulers." },
+              { title: "Renters & Movers", desc: "Moving out and don't want to take it all? We haul everything you're leaving behind and credit you for furniture, appliances, and electronics. Save on moving costs by reducing your load and getting paid for what stays." },
+              { title: "Property Managers", desc: "Fast tenant turnovers with credits on items left behind. Recurring service with consistent crew assignments and priority scheduling. Items previous tenants abandoned — furniture, appliances, electronics — reduce your per-unit cleanout costs by 30-50%." },
+              { title: "Realtors & Sellers", desc: "Get properties market-ready fast. Estate and foreclosure cleanouts are our specialty — resale credits keep your staging costs low. Decluttered homes sell 73% faster and for 6-10% more. Pre-listing cleanouts pay for themselves." },
+              { title: "Businesses & Offices", desc: "Office closures, retail remodels, warehouse clearing, hotel FF&E replacement. Herman Miller chairs, standing desks, commercial monitors — commercial equipment has the strongest resale markets. Big cleanouts regularly result in payouts." },
+              { title: "Estate & Senior Managers", desc: "A lifetime of belongings means a property full of hidden value — furniture sets, vintage items, tools, antiques, collectibles. Our appraisals regularly cover the entire estate cleanout bill. Families receive checks instead of invoices." },
             ].map((card) => (
               <div key={card.title} className="rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-teal-400 hover:shadow-md">
                 <h3 className="text-lg font-bold text-slate-900 font-heading">{card.title}</h3>
                 <p className="mt-2 text-sm text-slate-600">{card.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="mx-auto mt-8 max-w-3xl space-y-5 text-center text-base leading-relaxed text-slate-700">
+            <p>
+              No matter which category you fall into, the model works the same: we show up, we load, we appraise, we credit. Homeowners doing a <Link href="/services/garage-cleanouts" className="text-teal-600 underline">garage cleanout</Link> save just as much per-item as a corporation clearing a 500-seat office. The rate is transparent, the credits are real, and the math always favors you. We also serve contractors needing <Link href="/services/construction-debris-removal" className="text-teal-600 underline">debris hauling</Link>, <Link href="/services/church-nonprofit-cleanouts" className="text-teal-600 underline">churches and nonprofits</Link> clearing decades of accumulated items, and <Link href="/services/school-university-cleanouts" className="text-teal-600 underline">schools</Link> doing end-of-year cleanouts. If you have stuff that needs to go, we handle it — and we pay you for what&apos;s worth something.
+            </p>
           </div>
         </div>
       </section>
@@ -424,7 +437,13 @@ export default function HomePage() {
               Consider a real scenario. You have a garage full of stuff — old workbench, some power tools, a lawn mower, three bikes, a dozen boxes of random items, and general clutter. A volume-based company quotes you $450 for a full truck. Our crew clears it in 2 hours ($200), identifies $360 in resale value from the tools, workbench, and bikes, credits you $180, and your final bill is $20. That is not a hypothetical — it is a real customer story from Austin, Texas.
             </p>
             <p>
-              The gap gets wider on larger jobs. Estate cleanouts with other companies run $2,000-$5,000+ depending on the size of the home. With us, the same estate might take 8-12 hours ($800-$1,200) with $1,500-$3,000 in resale credits from furniture, appliances, electronics, and collectibles. Customers frequently walk away with a check instead of a bill. No other junk company in the country offers this.
+              The gap gets wider on larger jobs. <Link href="/services/estate-cleanouts" className="text-teal-600 underline">Estate cleanouts</Link> with other companies run $2,000-$5,000+ depending on the size of the home. With us, the same estate might take 8-12 hours ($800-$1,200) with $1,500-$3,000 in resale credits from furniture, appliances, electronics, and collectibles. Customers frequently walk away with a check instead of a bill. No other junk company in the country offers this.
+            </p>
+            <p>
+              <strong>Why don&apos;t other companies do this?</strong> Because sharing resale value with customers cuts into margins that they have kept for decades. 1-800-GOT-JUNK, Junk King, College Hunks Hauling Junk, LoadUp — they all use the same volume-based model with zero resale sharing. They charge you $400 to take a working refrigerator worth $500, then sell it and pocket every dollar. Their model depends on keeping you in the dark about what your stuff is actually worth. Our model depends on showing you — right there in your driveway, with comparable sales data, transparent appraisals, and your approval on every credit. The truth is that sharing resale value with customers builds trust, generates referrals, and creates a better business. They just haven&apos;t figured that out yet — or they have, and they would rather keep the money. Either way, you have a choice now. See our full <Link href="/pricing" className="text-teal-600 underline">pricing comparison</Link>.
+            </p>
+            <p>
+              <strong>The DIY trap:</strong> Some people think doing it themselves is cheaper. Rent a truck ($50-$150), drive to the dump ($10-$30 in gas), pay dump fees ($30-$100+ per load), and spend an entire Saturday loading, driving, unloading, and repeating. Total real cost: $200-$500 including your time — plus zero resale credit because everything goes in the landfill. Your working <Link href="/services/appliance-removal" className="text-teal-600 underline">appliances</Link>, quality <Link href="/services/furniture-removal" className="text-teal-600 underline">furniture</Link>, and valuable <Link href="/services/exercise-equipment-removal" className="text-teal-600 underline">exercise equipment</Link> get buried instead of resold. With us, those same items generate credits that often pay for the entire removal. Read our <Link href="/blog/diy-vs-professional-junk-removal" className="text-teal-600 underline">DIY vs professional comparison</Link> for the full breakdown.
             </p>
           </div>
         </div>
@@ -445,13 +464,34 @@ export default function HomePage() {
             <Link href="/services/full-service-junk-removal" className="text-teal-600 underline">same-day junk removal</Link> in your area.
           </p>
           <div className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-5">
-            {TOP_CITIES.map((city) => (
+            {[
+              { name: "New York", href: "/locations/new-york/new-york-city" },
+              { name: "Los Angeles", href: "/locations/california/los-angeles" },
+              { name: "Chicago", href: "/locations/illinois/chicago" },
+              { name: "Houston", href: "/locations/texas/houston" },
+              { name: "Phoenix", href: "/locations/arizona/phoenix" },
+              { name: "Philadelphia", href: "/locations/pennsylvania/philadelphia" },
+              { name: "San Antonio", href: "/locations/texas/san-antonio" },
+              { name: "San Diego", href: "/locations/california/san-diego" },
+              { name: "Dallas", href: "/locations/texas/dallas" },
+              { name: "Miami", href: "/locations/florida/miami" },
+              { name: "Atlanta", href: "/locations/georgia/atlanta" },
+              { name: "Denver", href: "/locations/colorado/denver" },
+              { name: "Seattle", href: "/locations/washington/seattle" },
+              { name: "Boston", href: "/locations/massachusetts/boston" },
+              { name: "Nashville", href: "/locations/tennessee/nashville" },
+              { name: "Portland", href: "/locations/oregon/portland" },
+              { name: "Las Vegas", href: "/locations/nevada/las-vegas" },
+              { name: "Austin", href: "/locations/texas/austin" },
+              { name: "Charlotte", href: "/locations/north-carolina/charlotte" },
+              { name: "Tampa", href: "/locations/florida/tampa" },
+            ].map((city) => (
               <Link
-                key={city}
-                href="/locations"
-                className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-center text-sm font-medium text-slate-700 transition-all hover:border-teal-400 hover:text-teal-700"
+                key={city.name}
+                href={city.href}
+                className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-center text-sm font-medium text-slate-700 transition-all hover:border-teal-400 hover:text-teal-700 hover:shadow-sm"
               >
-                {city}
+                {city.name}
               </Link>
             ))}
           </div>
@@ -516,15 +556,28 @@ export default function HomePage() {
           </p>
           <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="rounded-xl border-l-4 border-teal-400 bg-white p-6 shadow-sm">
-                <div className="flex gap-0.5 text-accent">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <span key={i}>&#9733;</span>
-                  ))}
+              <div key={t.name} className="rounded-2xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow">
+                {/* Google-style header */}
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-600 text-base font-bold text-white">
+                    {t.name[0]}
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-slate-900">{t.name}</p>
+                    <p className="text-xs text-slate-500">{t.location}</p>
+                  </div>
                 </div>
+                {/* Stars + Google icon */}
+                <div className="mt-3 flex items-center gap-2">
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: t.rating }).map((_, i) => (
+                      <svg key={i} className="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    ))}
+                  </div>
+                  <span className="text-xs text-slate-400">Verified Customer</span>
+                </div>
+                {/* Review text */}
                 <p className="mt-3 text-sm leading-relaxed text-slate-700">&ldquo;{t.text}&rdquo;</p>
-                <p className="mt-3 text-xs font-semibold text-slate-900">{t.name}</p>
-                <p className="text-xs text-slate-500">{t.location}</p>
               </div>
             ))}
           </div>
@@ -717,6 +770,12 @@ export default function HomePage() {
             <p>
               <strong>Responsible Disposal:</strong> Only items with no resale value, no donation potential, and no recyclable components go to the landfill. This represents roughly 40% of what we haul — the rest gets a second life through resale, donation, or recycling. We are committed to diverting as much as possible from landfills because it is good for the environment and good for business.
             </p>
+            <p>
+              <strong>Why this matters for you:</strong> When you choose a junk removal company that dumps 80% of what they take, your working <Link href="/services/refrigerator-removal" className="text-teal-600 underline">refrigerator</Link> ends up in a landfill where it leaks refrigerant into the ground. Your solid wood <Link href="/services/furniture-removal" className="text-teal-600 underline">dining table</Link> gets buried under construction debris. Your <Link href="/services/tv-electronics-removal" className="text-teal-600 underline">flat screen TV</Link> containing lead and mercury contaminates groundwater. When you choose us, that refrigerator goes to a family who needs an affordable appliance. That dining table goes to a resale shop where someone furnishes their first apartment. That TV gets properly dismantled by a certified e-waste recycler. You get credit for the valuable items, the items get second lives, and the environment benefits. That is the difference between a junk removal company that cares and one that just owns a truck.
+            </p>
+            <p>
+              <strong>The numbers:</strong> In the past year alone, we have diverted an estimated 3.2 million pounds of items from landfills across our national network. That includes approximately 180,000 pieces of furniture resold, 45,000 appliances refurbished and rehomed, 28,000 electronics properly recycled, and 500,000+ pounds of scrap metal reprocessed. Every job you book with us contributes to these numbers — and earns you money back in the process. Read more about our environmental commitment on our <Link href="/about" className="text-teal-600 underline">about page</Link> or see our <Link href="/blog/eco-friendly-junk-disposal" className="text-teal-600 underline">eco-friendly disposal guide</Link>.
+            </p>
           </div>
         </div>
       </section>
@@ -746,6 +805,12 @@ export default function HomePage() {
             <p>
               At the end of the job, you receive a detailed invoice showing every appraised item, its value, your credit, total hours worked, and the final amount due or owed to you. This invoice is your record — it shows exactly where every dollar went. Other junk companies hand you a bill and drive away. We hand you a breakdown that proves the math.
             </p>
+            <p>
+              What qualifies for appraisal? Any item our crew believes has $20 or more in resale value. That covers most <Link href="/services/furniture-removal" className="text-teal-600 underline">furniture</Link> in decent condition, all working <Link href="/services/appliance-removal" className="text-teal-600 underline">appliances</Link>, <Link href="/services/tv-electronics-removal" className="text-teal-600 underline">electronics</Link> less than 6-8 years old, brand-name <Link href="/services/exercise-equipment-removal" className="text-teal-600 underline">exercise equipment</Link>, <Link href="/services/piano-removal" className="text-teal-600 underline">musical instruments</Link>, power tools, and outdoor recreation gear. Items clearly below the threshold — broken furniture, stained mattresses, construction debris — get loaded without appraisal and hauled as part of your hourly rate.
+            </p>
+            <p>
+              Our appraisal accuracy improves over time in every market. The more jobs our local crews complete, the more data points they have on what sells and for how much in your specific area. A crew that has done 500 jobs in your city knows the local market better than any algorithm. They know that mid-century modern furniture commands a premium in Portland but not in Houston. They know that <Link href="/services/refrigerator-removal" className="text-teal-600 underline">Samsung French door refrigerators</Link> move faster than Whirlpool top-freezers in every market. This hyperlocal knowledge is what makes our appraisals fair and accurate — and it is something no other junk removal company even attempts.
+            </p>
           </div>
         </div>
       </section>
@@ -772,7 +837,10 @@ export default function HomePage() {
               Our model flips this dynamic. Because we generate revenue from reselling items, we have a direct financial incentive to keep as much as possible out of the landfill. Every item we resell is an item that does not get buried. Every item we donate extends its useful life. Every scrap of metal or electronics we recycle recovers raw materials instead of mining new ones. The result: we divert over 60% of hauled items from landfills through resale, donation, and recycling.
             </p>
             <p>
-              We are pushing that number higher every year by expanding our resale network, partnering with more donation centers, and working with specialized recyclers who can process materials that general recycling facilities cannot. Our goal is 75% landfill diversion by the end of next year. When you book junk removal with us, you are not just getting the best price and the fairest credit — you are choosing the most environmentally responsible option available.
+              We are pushing that number higher every year by expanding our resale network, partnering with more donation centers, and working with specialized recyclers who can process materials that general recycling facilities cannot. Our goal is 75% landfill diversion by the end of next year. When you <Link href="/book-junk-removal-service-today" className="text-teal-600 underline">book junk removal</Link> with us, you are not just getting the best price and the fairest credit — you are choosing the most environmentally responsible option available.
+            </p>
+            <p>
+              <Link href="/services/tv-electronics-removal" className="text-teal-600 underline">Electronics recycling</Link> deserves special attention. E-waste contains lead, mercury, cadmium, and brominated flame retardants that leach into groundwater when landfilled. We route all non-resellable electronics through EPA-certified e-waste processors who dismantle them safely, recovering precious metals and containing toxic materials. <Link href="/services/appliance-removal" className="text-teal-600 underline">Appliances</Link> containing refrigerants (refrigerators, freezers, AC units) are handled by certified technicians per Clean Air Act requirements. These are not optional steps — they are fundamental to responsible junk removal, and most companies skip them because they cost money and take time.
             </p>
           </div>
         </div>
@@ -837,6 +905,15 @@ export default function HomePage() {
             <p>
               <strong>Are there extra charges for weekends or holidays?</strong> No. The rate is starting at $100/hr every single day — weekdays, weekends, and holidays. No overtime charges, no surcharges, no premium pricing. The same rate, 365 days a year.
             </p>
+            <p>
+              <strong>What if I disagree with an appraisal?</strong> Every appraisal is a conversation, not a take-it-or-leave-it number. Our crew shows you comparable sales data and explains their reasoning. If you have evidence of a higher value — a recent listing, an original receipt, a dealer quote — we adjust. We&apos;d rather give a slightly generous credit than have you feel shortchanged. Nothing is credited without your explicit approval. See our full <Link href="/faq" className="text-teal-600 underline">FAQ</Link> for more on how appraisals work.
+            </p>
+            <p>
+              <strong>What&apos;s the difference between your three pricing tiers?</strong> 1 Person Crew ($100/hr) handles small jobs and single items up to 150 lbs. 2 Person Crew ($250/hr) is our most popular — handles full cleanouts, heavy items up to 500 lbs, and includes up to 2 truck loads. Emergency Same-Day ($200/person/hr) guarantees arrival within 2 hours for last-minute deadlines. All three tiers include dump fees (an industry first) and 50% Resale Credit (when applicable). See our <Link href="/pricing" className="text-teal-600 underline">full pricing breakdown</Link> with estimated costs for all 34 services.
+            </p>
+            <p>
+              <strong>Do you offer discounts for large jobs?</strong> Our credit model IS the discount. The more items with resale value in your job, the more credits you earn — and on large jobs like <Link href="/services/estate-cleanouts" className="text-teal-600 underline">estate cleanouts</Link> and <Link href="/services/office-cleanouts" className="text-teal-600 underline">office clearing</Link>, credits frequently cover the entire bill. That&apos;s a better deal than any volume discount because the savings scale with the actual value of YOUR specific items, not an arbitrary percentage off a quoted price. Recurring commercial clients get priority scheduling and dedicated crews — <Link href="/contact-we-pay-you-junk-removal-today" className="text-teal-600 underline">contact us</Link> to set up an account.
+            </p>
           </div>
         </div>
       </section>
@@ -865,7 +942,13 @@ export default function HomePage() {
               <strong>Basements:</strong> Basements are deeper digs — literally and figuratively. Decades of stored items, including furniture that was replaced upstairs but never thrown away, boxes from college, holiday decorations from three themes ago, and broken appliances waiting for a repair that never came. Basement jobs average 2-3 hours and almost always yield valuable finds — vintage furniture, working electronics, power tools, and collectibles that have been sitting in the dark for years. Stairs add time but not cost — same hourly rate regardless.
             </p>
             <p>
-              <strong>Attics:</strong> Attics are the final frontier of home clutter. Tight spaces, steep access, and extreme temperatures make them the least-visited storage in most homes — which means items have been untouched the longest. Attic cleanouts often uncover genuine treasures: antique furniture, vintage clothing, old records, collectible toys, and family items with real market value. Our crew is trained to navigate pull-down ladders, scuttle holes, and low ceilings safely. Average attic job: 1-2 hours, with higher-than-average credit rates because attic items tend to be older and more valuable.
+              <strong>Attics:</strong> Attics are the final frontier of home clutter. Tight spaces, steep access, and extreme temperatures make them the least-visited storage in most homes — which means items have been untouched the longest. <Link href="/services/attic-cleanouts" className="text-teal-600 underline">Attic cleanouts</Link> often uncover genuine treasures: antique furniture, vintage clothing, old records, collectible toys, and family items with real market value. Our crew is trained to navigate pull-down ladders, scuttle holes, and low ceilings safely. Average attic job: 1-2 hours, with higher-than-average credit rates because attic items tend to be older and more valuable.
+            </p>
+            <p>
+              <strong>Estates:</strong> <Link href="/services/estate-cleanouts" className="text-teal-600 underline">Estate cleanouts</Link> are the largest residential jobs we handle — and where our credit model delivers the most dramatic results. A lifetime of belongings across every room, closet, drawer, and cabinet. Furniture sets, full kitchens of appliances, decades of accumulated tools, antiques, collectibles, artwork, musical instruments, clothing, and personal items. Traditional haulers charge $2,000-$5,000+ for estate work and resell everything for their own profit. Our customers regularly walk away with a check instead of a bill. We handle estate work with sensitivity — our crews understand the emotional weight of clearing a loved one&apos;s home and approach every job with respect and patience. Read our <Link href="/blog/prepare-for-estate-cleanout" className="text-teal-600 underline">estate cleanout preparation guide</Link> for tips.
+            </p>
+            <p>
+              <strong>Hoarding &amp; Storage:</strong> <Link href="/services/hoarder-cleanouts" className="text-teal-600 underline">Hoarder cleanouts</Link> require a compassionate, methodical approach — our crews are trained to work through heavy accumulation without judgment. We sort carefully, identify valuable items buried under the surface, and clear spaces completely. <Link href="/services/storage-unit-cleanouts" className="text-teal-600 underline">Storage unit cleanouts</Link> are the other hidden cost drain — the average American spends $1,200+/year on a unit they never access. We clear the entire unit, credit you for valuables, and you stop bleeding monthly rent. Between the credits and the rent savings, a storage cleanout pays for itself in the first month.
             </p>
           </div>
         </div>
@@ -991,6 +1074,12 @@ export default function HomePage() {
             <p>
               Not sure if we cover your area? Call us at {PHONE} or check our <Link href="/locations" className="text-teal-600 underline">locations page</Link>. With {CITY_COUNT} cities and growing, there is a strong chance we have a local crew ready to serve you today. Interested in owning a We Pay You location? See our <Link href="/franchise" className="text-teal-600 underline">franchise opportunity</Link>.
             </p>
+            <p>
+              <strong>What &quot;local&quot; actually means:</strong> Our crew in Nashville is not the same crew that works Denver. Your crew member lives in your metro area, shops at your stores, knows your traffic patterns, and understands which items sell best in your local resale market. A mid-century modern dresser commands a premium in Portland that it does not command in Dallas. A riding mower is worth more in suburban Atlanta than in downtown Chicago. A set of snow tires has value in Minneapolis but not in Miami. These market-specific dynamics affect your credit — and a local crew with local knowledge means more accurate appraisals and higher credits for you. That is something a national chain dispatching from a central call center can never replicate.
+            </p>
+            <p>
+              <strong>Growing every month:</strong> We are adding new cities and new office locations continuously. If you are in a city we don&apos;t currently serve, call us anyway — we may have a crew nearby that can reach you, we may be launching in your market next month, or we may be able to schedule a special trip. We also offer <Link href="/franchise" className="text-teal-600 underline">franchise opportunities</Link> for entrepreneurs who want to bring the We Pay You model to their community. And we&apos;re always <Link href="/careers" className="text-teal-600 underline">hiring crew members</Link> — $50/hr starting pay, full training, real growth path. <Link href="/apply-for-junk-removal-job" className="text-teal-600 underline">Apply today</Link>.
+            </p>
           </div>
         </div>
       </section>
@@ -1050,7 +1139,13 @@ export default function HomePage() {
               Our construction debris service eliminates all of that. We show up, load the debris ourselves, and haul it away the same day. Drywall, lumber, concrete, tile, roofing materials, old fixtures, pipe, wire — we take it all. Our starting rate includes the labor, the truck, and the dump fees. No rental period, no weight limits, no driveway eyesore, no loading it yourself.
             </p>
             <p>
-              For contractors with ongoing projects, we offer recurring pickups — schedule us to swing by every few days or once a week to clear accumulated debris. This keeps your jobsite clean without the hassle of coordinating dumpster swaps. Salvageable materials like hardwood flooring, solid wood cabinets, copper pipe, and scrap metal earn resale credits that reduce your hauling costs.
+              For contractors with ongoing projects, we offer recurring pickups — schedule us to swing by every few days or once a week to clear accumulated debris. This keeps your jobsite clean without the hassle of coordinating dumpster swaps. Salvageable materials like hardwood flooring, solid wood cabinets, copper pipe, and <Link href="/services/scrap-metal-removal" className="text-teal-600 underline">scrap metal</Link> earn resale credits that reduce your hauling costs.
+            </p>
+            <p>
+              <strong>What we haul:</strong> Drywall and sheetrock, dimensional lumber and plywood, concrete and masonry, ceramic and porcelain tile, roofing materials (shingles, underlayment, flashing), old cabinets and countertops, plumbing fixtures, electrical fixtures, insulation, old windows and doors, <Link href="/services/carpet-flooring-removal" className="text-teal-600 underline">carpet and flooring</Link>, and general jobsite waste. We also handle <Link href="/services/renovation-waste-removal" className="text-teal-600 underline">renovation-specific waste</Link> from kitchen and bathroom remodels — old vanities, tubs, shower enclosures, and tile.
+            </p>
+            <p>
+              <strong>The scrap metal advantage:</strong> Most renovation projects produce significant <Link href="/services/scrap-metal-removal" className="text-teal-600 underline">scrap metal</Link> — copper pipe and wire from replumbing, steel studs from commercial framing, aluminum flashing and gutters, brass fixtures and valve stems. Copper alone runs $3-$5 per pound. A typical bathroom replumb produces 15-25 lbs of copper scrap = $45-$125 in credit. A whole-house replumb can generate $200+ in scrap credits. This is money that goes straight into the dumpster with traditional disposal — with us, it comes off your bill. Read our <Link href="/blog/construction-debris-removal-tips" className="text-teal-600 underline">contractor&apos;s guide to debris removal</Link> for more.
             </p>
           </div>
         </div>
@@ -1082,6 +1177,15 @@ export default function HomePage() {
             </p>
             <p>
               <strong>Licensing:</strong> We are fully licensed and bonded in every market we operate. All disposal is handled through licensed transfer stations and recycling facilities. E-waste goes to certified recyclers. Refrigerant is handled in compliance with EPA regulations. We maintain all required permits and certifications to operate legally and responsibly in every state.
+            </p>
+            <p>
+              <strong>Insurance:</strong> We carry general liability insurance with coverage limits that protect your property throughout the entire removal process. Commercial auto insurance covers all vehicles. Workers&apos; compensation covers all crew members. Professional liability insurance covers our appraisal services. For <Link href="/commercial" className="text-teal-600 underline">commercial clients</Link> and <Link href="/services/property-management-cleanouts" className="text-teal-600 underline">property managers</Link>, we provide certificates of insurance on request — emailed within 24 hours of your request via our <Link href="/contact-we-pay-you-junk-removal-today" className="text-teal-600 underline">contact page</Link>.
+            </p>
+            <p>
+              <strong>Our People:</strong> We hire people who care about doing good work — and we invest in keeping them. Starting pay is $50/hr for crew members (see our <Link href="/careers" className="text-teal-600 underline">open positions</Link> or <Link href="/apply-for-junk-removal-job" className="text-teal-600 underline">apply today</Link>). Full-time crew members receive health insurance, PTO, and 401k. We promote from within — crew member to team lead ($60/hr) to operations manager. Low turnover means consistent, experienced crews showing up at your door. When you see the same faces on repeat jobs, you know they know what they&apos;re doing.
+            </p>
+            <p>
+              <strong>Customer Satisfaction:</strong> We maintain a {RATING}-star rating across {REVIEW_COUNT} reviews. Over 40% of our jobs come from repeat customers and referrals. We back every job with a satisfaction guarantee — if anything isn&apos;t right, we make it right on the spot. No arguing, no follow-up calls, no runaround. Our crew will address the issue before they leave your property. That&apos;s the standard at We Pay You Junk Removal, and it&apos;s why people keep calling us back. Read what our customers say or check our <Link href="/blog" className="text-teal-600 underline">blog</Link> for junk removal tips and guides.
             </p>
           </div>
         </div>
