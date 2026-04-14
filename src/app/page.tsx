@@ -1211,7 +1211,7 @@ export default function HomePage() {
             Ready to Get Paid for Your Junk?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
-            rates starting at $100/hr. Dump fees included (an industry first). 50% Resale Credit (when applicable) on items with value. {CITY_COUNT} cities, all {STATE_COUNT} states, {HOURS}. Book online, call, or text — same-day service available.
+            Rates starting at $100/hr with dump fees included (an industry first). 50% Resale Credit (when applicable) on every item with value — furniture, appliances, electronics, tools, and more. {CITY_COUNT} cities across all {STATE_COUNT} states. Open {HOURS}, seven days a week, including weekends and holidays. Same-day service available for calls placed before noon. No contracts, no hidden fees, no minimum truck loads. Your stuff has value — stop giving it away to companies that profit from it without sharing. Text, call, or book online right now and see the difference.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a href={SMS_HREF}>
