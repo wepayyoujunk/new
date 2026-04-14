@@ -1,57 +1,107 @@
 import Link from "next/link";
-import { PHONE, PHONE_HREF, SMS_HREF, EMAIL, HOURS, SERVICES, TOP_CITIES } from "@/data/content";
+import { PHONE, PHONE_HREF, SMS_HREF, EMAIL, HOURS } from "@/data/content";
+import { SERVICES } from "@/data/services";
+import { STATES } from "@/data/cities";
+
+const TOP_CITY_LINKS = [
+  { name: "New York", state: "new-york", city: "new-york-city" },
+  { name: "Los Angeles", state: "california", city: "los-angeles" },
+  { name: "Chicago", state: "illinois", city: "chicago" },
+  { name: "Houston", state: "texas", city: "houston" },
+  { name: "Phoenix", state: "arizona", city: "phoenix" },
+  { name: "Philadelphia", state: "pennsylvania", city: "philadelphia" },
+  { name: "Dallas", state: "texas", city: "dallas" },
+  { name: "Miami", state: "florida", city: "miami" },
+  { name: "Atlanta", state: "georgia", city: "atlanta" },
+  { name: "Denver", state: "colorado", city: "denver" },
+];
 
 export function Footer() {
   return (
     <footer className="bg-slate-900 text-white">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+          {/* Brand */}
+          <div className="lg:col-span-1">
             <h3 className="text-xl font-bold tracking-widest font-heading mb-4">
               WEPAYYOU<span className="text-teal-200">JUNK</span>
             </h3>
             <p className="text-slate-400 text-sm leading-relaxed mb-4">
-              The only junk removal company that values your stuff. Simple hourly rates, dump fees included, 50% Resale Credit (when applicable) on items worth something.
+              The only junk removal company that values your stuff. Starting at $100/hr, dump fees included (an industry first), 50% Resale Credit (when applicable).
             </p>
             <div className="space-y-1.5 text-sm">
-              <p><a href={PHONE_HREF} className="text-teal-400 font-semibold hover:text-teal-300 font-cta">{PHONE}</a></p>
+              <p><a href={SMS_HREF} className="text-teal-400 font-semibold hover:text-teal-300 font-cta">Text {PHONE}</a></p>
+              <p><a href={PHONE_HREF} className="text-teal-400 font-semibold hover:text-teal-300 font-cta">Call {PHONE}</a></p>
               <p><a href={`mailto:${EMAIL}`} className="text-slate-400 hover:text-white">{EMAIL}</a></p>
-              <p className="text-slate-500">{HOURS}</p>
+              <p className="text-slate-500">{HOURS} &bull; 7 Days</p>
             </div>
           </div>
 
+          {/* Services */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4 font-cta">Services</h4>
             <ul className="space-y-2 text-sm">
               {SERVICES.slice(0, 8).map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/services#${s.slug}`} className="text-slate-400 hover:text-white transition-colors">{s.title}</Link>
+                  <Link href={`/services/${s.slug}`} className="text-slate-400 hover:text-white transition-colors">{s.title}</Link>
                 </li>
               ))}
+              <li>
+                <Link href="/services" className="text-teal-400 hover:text-teal-300 font-semibold transition-colors font-cta">All {SERVICES.length} Services →</Link>
+              </li>
             </ul>
           </div>
 
+          {/* Top Cities — linking to actual city pages */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4 font-cta">Top Cities</h4>
             <ul className="space-y-2 text-sm">
-              {TOP_CITIES.slice(0, 10).map((city) => (
-                <li key={city}>
-                  <Link href="/locations" className="text-slate-400 hover:text-white transition-colors">
-                    Junk Removal in {city}
+              {TOP_CITY_LINKS.map((c) => (
+                <li key={c.city}>
+                  <Link href={`/locations/${c.state}/${c.city}`} className="text-slate-400 hover:text-white transition-colors">
+                    {c.name}
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/locations" className="text-teal-400 hover:text-teal-300 font-semibold transition-colors font-cta">All Locations →</Link>
+              </li>
             </ul>
           </div>
 
+          {/* Company */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4 font-cta">Company</h4>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/about" className="text-slate-400 hover:text-white transition-colors">About</Link></li>
               <li><Link href="/pricing" className="text-slate-400 hover:text-white transition-colors">Pricing</Link></li>
               <li><Link href="/faq" className="text-slate-400 hover:text-white transition-colors">FAQ</Link></li>
               <li><Link href="/commercial" className="text-slate-400 hover:text-white transition-colors">Commercial</Link></li>
               <li><Link href="/locations" className="text-slate-400 hover:text-white transition-colors">Locations</Link></li>
-              <li><Link href="/services" className="text-slate-400 hover:text-white transition-colors">All Services</Link></li>
+              <li><Link href="/blog" className="text-slate-400 hover:text-white transition-colors">Blog</Link></li>
+              <li><Link href="/careers" className="text-slate-400 hover:text-white transition-colors">Jobs</Link></li>
+              <li><Link href="/franchise" className="text-slate-400 hover:text-white transition-colors">Franchise</Link></li>
+            </ul>
+          </div>
+
+          {/* Actions */}
+          <div>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4 font-cta">Get Started</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/book-junk-removal-service-today" className="text-teal-400 hover:text-teal-300 font-semibold transition-colors font-cta">Book Now</Link></li>
+              <li><Link href="/contact-we-pay-you-junk-removal-today" className="text-slate-400 hover:text-white transition-colors">Contact Us</Link></li>
+              <li><a href={SMS_HREF} className="text-slate-400 hover:text-white transition-colors">Text Us</a></li>
+              <li><a href={PHONE_HREF} className="text-slate-400 hover:text-white transition-colors">Call Us</a></li>
+            </ul>
+
+            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mt-6 mb-4 font-cta">Quick Links</h4>
+            <ul className="space-y-2 text-sm">
+              {STATES.slice(0, 5).map((s) => (
+                <li key={s.slug}>
+                  <Link href={`/locations/${s.slug}`} className="text-slate-400 hover:text-white transition-colors">{s.name}</Link>
+                </li>
+              ))}
+              <li><Link href="/locations" className="text-teal-400 hover:text-teal-300 font-semibold transition-colors font-cta">All 50 States →</Link></li>
             </ul>
           </div>
         </div>
