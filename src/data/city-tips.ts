@@ -240,6 +240,62 @@ export function generateCityTips(cityName: string, stateName: string, stateAbbr:
           `Our ${cityName} crews communicate clearly throughout the job — what they are loading, what has value, what the appraisals look like, and when they expect to finish. At the end of every job, they do a walkthrough with you to confirm the space is clean and everything you wanted removed is gone. No surprises, no rushing out the door, no "good enough." The space is left cleaner than they found it.`,
         ],
       },
+      {
+        heading: `Garage and Basement Cleanout Guide for ${cityName} Homeowners`,
+        paragraphs: [
+          `${cityName} garages are the catch-all storage for everything without a home inside the house — tools, holiday decorations, sports equipment, old furniture, paint cans, boxes from every move you have ever made, and items you forgot you owned. The average ${cityName} garage cleanout with our crew takes 2-3 hours. Tools and equipment are the biggest credit generators — power tools, hand tools, lawn mowers, workbenches, and shop equipment hold value well in the ${cityName} resale market. Many ${cityName} homeowners tell us their final bill was under $100 after credits, for a space that had been unusable for years.`,
+          `${cityName} basements are deeper digs — literally and figuratively. Decades of stored items including furniture that was replaced upstairs but never discarded, boxes from college, holiday decorations from three themes ago, broken appliances waiting for repairs that never came, and that treadmill that became a clothes rack in 2019. Basement jobs in ${cityName} average 2-4 hours and almost always yield valuable finds — vintage furniture, working electronics, power tools, and collectibles that have been sitting in the dark for years. Stairs add time but not cost — same hourly rate regardless of access challenges.`,
+          `${profile.housingTypes[0].charAt(0).toUpperCase() + profile.housingTypes[0].slice(1)} are common in ${cityName}, which means ${profile.localChallenges[0]}. Our crew is trained for these specific ${cityName} access challenges and carries the right equipment for every scenario. Whether your garage is a detached structure 100 feet from the driveway or your basement is down a narrow flight of stairs with a low overhang — same rate, same service, same professionalism.`,
+        ],
+      },
+      {
+        heading: `Structure Removal in ${cityName} — Sheds, Fences, Decks`,
+        paragraphs: [
+          `Old sheds, rotting fences, deteriorating decks, and abandoned trampolines are common eyesores in ${cityName} backyards. Our crew handles full demolition and removal — we tear it down, load every piece, haul it away, and leave the ground clear. All included in the hourly rate. No need to hire a separate demolition crew and a separate hauling company.`,
+          `Shed removal in ${cityName}: our crew demolishes walls, roof, floor, and foundation. Average time 2-3 hours. Metal sheds generate scrap credit. Wood sheds go to disposal. We leave the footprint clean and level. Fence removal covers all types — wood, chain link, vinyl, wrought iron. Posts pulled or cut at ground level, your choice. Metal fencing earns scrap credit. Deck removal includes full tear-down of decking boards, railings, stairs, and support posts. All lumber and hardware loaded and hauled. ${cityName} deck sizes vary widely but typical removal runs 3-6 hours.`,
+          `The transformation is dramatic. A backyard dominated by a rotting shed, a leaning fence, or a crumbling deck becomes usable space in a single afternoon. ${cityName} homeowners consistently tell us that structure removal was the best backyard investment they ever made — better than the deck itself, better than the landscaping, better than the patio furniture. Removing the eyesore changes everything.`,
+        ],
+      },
+      {
+        heading: `Exercise Equipment and Specialty Item Removal in ${cityName}`,
+        paragraphs: [
+          `The fitness equipment resale market in ${cityName} is strong and growing. Peloton bikes still fetch $400-$1,000+ depending on model and condition. NordicTrack treadmills bring $200-$500. Bowflex machines, ellipticals, rowing machines, and weight benches all have active buyers. Free weights sell for roughly $0.50-$1.00 per pound — a full Olympic set (300 lbs) is worth $150-$300 in the ${cityName} market.`,
+          `Pianos are among the most challenging and highest-value specialty items in ${cityName}. Uprights weigh 300-500 lbs, baby grands 500-600 lbs, and full grands 700-1,200 lbs. Our crews are trained in piano moving techniques. Working pianos in good condition earn significant credit — a well-maintained Yamaha upright might bring $500-$2,000. Even non-functional pianos are removed at the standard hourly rate.`,
+          `Hot tubs require demolition — cutting the shell, disconnecting plumbing and electrical, loading all components. Pool tables need disassembly — slate tops, rails, frame, all loaded separately. Trampolines need spring removal and frame breakdown. All of these specialty items in ${cityName} are handled by our crew at the same hourly rate with dump fees included. No extra charges for heavy items, no demolition surcharges, no specialty fees.`,
+        ],
+      },
+      {
+        heading: `${cityName} Junk Removal for Seniors and Downsizers`,
+        paragraphs: [
+          `Downsizing is one of the most significant transitions a ${cityName} resident can face. After decades in a home, the volume of belongings is overwhelming — and the emotional attachment makes every decision harder. Our crews approach senior downsizing in ${cityName} with patience, respect, and zero pressure. We work at the pace of the person, not the clock.`,
+          `Senior households in ${cityName} often contain the highest-value items we encounter. Quality furniture from the 1970s, 1980s, and 1990s — solid wood, real leather, American-made — holds strong resale value in the ${cityName} market. Vintage and antique pieces can be worth significantly more than their modern equivalents. Mid-century modern furniture, in particular, commands premium prices in many ${cityName} neighborhoods.`,
+          `For ${cityName} families coordinating long-distance — adult children who cannot be physically present — we offer phone and video walkthroughs before the job, detailed documentation during, and transparent invoicing after. We send photos of appraised items and credits so the family can see exactly what was removed and what it was worth. No surprises, no guesswork, no wondering what happened to Mom's dining set.`,
+        ],
+      },
+      {
+        heading: `Electronics and E-Waste Recycling in ${cityName}`,
+        paragraphs: [
+          `Americans generate 6.9 million tons of e-waste annually and only 15% gets properly recycled. The rest goes to landfills where lead, mercury, cadmium, and other toxic materials leach into groundwater. Many ${stateName} municipalities now ban electronics from regular trash, with fines ranging from $25 to $1,000 per violation. Proper e-waste disposal in ${cityName} is not just environmentally responsible — it may be legally required.`,
+          `Electronics within their useful life still have resale value in the ${cityName} market. Flat screen TVs less than 5-6 years old: $100-$500 depending on size and brand. Gaming consoles: $100-$400. Desktop computers: $50-$300. Laptops: $75-$800 (Apple products hold value exceptionally well). Monitors, audio equipment, smart home devices, cameras, and networking equipment all have active buyers in ${cityName}.`,
+          `We handle e-waste disposal properly in ${cityName}: items with resale value get sold through our network (you already received 50% credit when applicable). Items past resale life go to certified e-waste recyclers who dismantle them safely, recovering precious metals while containing hazardous materials. One pickup, everything handled — old TVs, monitors, computers, printers, cables, phones, tablets, gaming systems. No sorting required on your end.`,
+        ],
+      },
+      {
+        heading: `Scrap Metal Value in ${cityName} — Hidden Money in Your Home`,
+        paragraphs: [
+          `Most ${cityName} homeowners do not realize they are sitting on significant scrap metal value — especially after renovations, plumbing work, or appliance replacements. Copper alone runs $3-$5 per pound, and it is everywhere in a typical ${cityName} home.`,
+          `Copper pipe from a replumb: 20-50 lbs depending on house size = $60-$250 in scrap value. Copper wire from an electrical upgrade: 10-30 lbs = $30-$150. Old copper gutters: potentially hundreds of dollars. Aluminum siding, window frames, and lawn equipment contain aluminum worth $0.50-$1.00 per pound. Steel from old appliances, filing cabinets, shelving, and tools has lower per-pound value but adds up in volume. Brass fixtures, faucets, and valve stems are commonly overlooked at $2-$3 per pound.`,
+          `When you book scrap metal removal in ${cityName} with us, we credit you 50% of the scrap value (when applicable) toward your bill. Metal-heavy jobs — post-renovation cleanup, old fence removal, multiple appliance hauling — frequently generate credits that significantly reduce or eliminate the removal cost. A typical kitchen replumb in ${cityName} produces enough copper scrap to earn $50-$125 in credit alone.`,
+        ],
+      },
+      {
+        heading: `Storage Unit Cleanouts in ${cityName} — Stop Paying Monthly Rent`,
+        paragraphs: [
+          `The average storage unit in ${cityName} costs $100-$200 per month. After 3 years, that is $3,600-$7,200 paid to store items you have not looked at in ages. If you have not accessed your storage unit in 6+ months, you probably do not need what is in it — but that does not mean it is worthless.`,
+          `We coordinate directly with ${cityName} storage facilities for access and scheduling. Our crew clears the entire unit, appraises everything with value, and you stop paying rent the same day. Common high-value items found in ${cityName} storage units: furniture you planned to use someday, seasonal decorations with resale value, electronics that still work, sports and outdoor equipment, tools, and collectibles you forgot about.`,
+          `The math is simple for ${cityName} residents: one cleanout at $100-$300 (after credits) versus $1,200-$2,400+ per year in ongoing rent. The cleanout pays for itself in the first month. Most ${cityName} customers wish they had done it years ago. Stop bleeding money on a storage unit full of stuff that is earning you nothing — let us clear it, credit you for valuables, and put that monthly rent back in your budget.`,
+        ],
+      },
     ],
   };
 }
