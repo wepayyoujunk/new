@@ -296,6 +296,42 @@ export function generateCityTips(cityName: string, stateName: string, stateAbbr:
           `The math is simple for ${cityName} residents: one cleanout at $100-$300 (after credits) versus $1,200-$2,400+ per year in ongoing rent. The cleanout pays for itself in the first month. Most ${cityName} customers wish they had done it years ago. Stop bleeding money on a storage unit full of stuff that is earning you nothing — let us clear it, credit you for valuables, and put that monthly rent back in your budget.`,
         ],
       },
+      {
+        heading: `How Our Appraisal Process Works in ${cityName}`,
+        paragraphs: [
+          `When our ${cityName} crew loads an item with potential resale value, the appraisal happens immediately and transparently. The crew member identifies the item — brand, model, approximate age, condition (functional status and cosmetic state), and completeness (all parts present, accessories included). They check comparable sales data from our pricing database, which tracks real transaction prices across resale channels in the ${cityName} area and nationally. This is not guesswork — it is data-driven valuation based on what similar items actually sold for in the last 30-90 days.`,
+          `The crew member presents the appraisal to you: the item, its estimated fair market value, and your 50% credit amount (when applicable). You approve or reject each appraisal individually. If you think the value is low, say so — the crew member will explain their reasoning and adjust if warranted. If you decide you want to keep an item after seeing its value, we take it off the truck. No questions, no pressure, no attitude. Our ${cityName} crews want you to feel confident that every valuation is fair and accurate.`,
+          `At the end of the job, you receive a detailed invoice showing every appraised item, its value, your credit, total hours worked, and the final amount due or owed to you. This documentation is clear, professional, and suitable for insurance claims, estate records, or business expense reporting. Other ${cityName} junk companies hand you a bill and drive away. We hand you a breakdown that proves every dollar of the math.`,
+          `Our ${cityName} crew's appraisal accuracy improves over time. The more jobs they complete in your area, the more data points they have on what sells and for how much in the ${cityName} market specifically. A crew that has done 500 jobs in your metro knows the local market better than any algorithm. They know that mid-century modern furniture commands premiums in certain ${cityName} neighborhoods. They know that Samsung appliances move faster than off-brands in your area. This hyperlocal expertise is what makes our appraisals in ${cityName} both fair and accurate.`,
+        ],
+      },
+      {
+        heading: `${cityName} Junk Removal vs. DIY — The True Cost Comparison`,
+        paragraphs: [
+          `Many ${cityName} residents consider handling junk removal themselves before calling a professional. DIY seems cheaper on the surface, but the hidden costs add up fast when you factor in everything. Truck rental in ${cityName}: $50-$150 per day. Dump fees at local ${stateAbbr} transfer stations: $30-$100+ per load depending on weight and material type. Gas to haul items across ${cityName}: $10-$30. That is $90-$280 in hard costs alone — before accounting for your time.`,
+          `A DIY junk removal project in ${cityName} typically takes an entire day when you factor in loading (2-3 hours of hard physical labor), driving to the dump (30-60 minutes each way in ${cityName} traffic), waiting in line at the transfer station (15-45 minutes), unloading, and repeating for multiple loads. That is 6-10 hours of backbreaking work. If your time is worth $30-$50/hr (conservative for most working ${cityName} adults), that is $180-$500 in opportunity cost on top of the hard costs.`,
+          `Total real cost of DIY in ${cityName}: $270-$780. Our crew handles the same job in 2-3 hours starting at $100/hr. Before credits, that is $200-$750. After resale credits (which DIY generates zero of because everything goes to the dump), most ${cityName} customers pay $100-$500 out of pocket. AND they did not lift a finger, did not spend their Saturday at the dump, and did not risk injuring their back carrying a dresser down the stairs.`,
+          `The biggest hidden cost of DIY that most ${cityName} residents do not consider: you get zero resale credit. Every valuable item goes straight to the landfill. That working refrigerator worth $300 on the resale market, the solid wood desk worth $150, the power tools worth $200 — all buried. With our service, those same items generate $325 in credits that reduce your bill. When you factor in resale credits, professional junk removal in ${cityName} is almost always cheaper than DIY — and infinitely easier.`,
+        ],
+      },
+      {
+        heading: `Frequently Asked Questions About Junk Removal in ${cityName}`,
+        paragraphs: [
+          `How much does junk removal cost in ${cityName}? Our rates are $100/hr for a 1-person crew, $250/hr for a 2-person crew, and $200/person/hr for emergency same-day. Dump fees are included (an industry first). 1 hour minimum. Most residential jobs in ${cityName} use the 2-person crew and take 1.5-3 hours. After 50% resale credits (when applicable), the average ${cityName} customer pays 25-40% less than flat-rate competitors.`,
+          `Do you offer same-day junk removal in ${cityName}? Yes. Call before noon and we can typically have a crew at your ${cityName} door within 2-4 hours. Emergency same-day guarantees arrival within 2 hours.`,
+          `What items earn the most resale credit in ${cityName}? Quality furniture (Pottery Barn, Restoration Hardware, solid wood), working appliances (Samsung, LG, Whirlpool), power tools (DeWalt, Milwaukee, Makita), exercise equipment (Peloton, NordicTrack), and electronics less than 6 years old. Brand names and condition matter most in the ${cityName} resale market.`,
+          `Can I really get paid for junk removal in ${cityName}? Yes. If your resale credits exceed the total hours worked, we pay you the difference — by check or digital transfer, on the spot. This happens regularly on estate cleanouts and office cleanouts in the ${cityName} area where the concentration of valuable items is high.`,
+          `What can you not take in ${cityName}? Hazardous chemicals, asbestos, wet paint, biological waste, full propane tanks, ammunition, and compressed gas cylinders. Everything else — furniture, appliances, electronics, construction debris, yard waste, tires, mattresses, hot tubs, pianos, and thousands of other items — we handle.`,
+        ],
+      },
+      {
+        heading: `Why ${cityName} Residents Choose We Pay You Over Every Other Option`,
+        paragraphs: [
+          `${cityName} has dozens of junk removal options — national chains, regional operators, local guys with a truck. But only one company gives you money back for your valuable items. 1-800-GOT-JUNK in ${cityName} charges $200-$800 per truckload and keeps 100% of resale profit. Junk King charges similar rates with the same model. College Hunks Hauling Junk, LoadUp, local haulers — all the same. They charge you, take your stuff, sell the good items, and you never see a dime.`,
+          `We Pay You Junk Removal in ${cityName} is the only company that shares resale value with the customer. $100/hr starting rate with dump fees included (an industry first). 50% of resale value (when applicable) credited to your bill. If credits exceed the bill, we pay you. Licensed, bonded, insured, background-checked crews. Same-day available. 7 days a week. No contracts, no hidden fees, no volume estimates, no games. Just the fairest junk removal deal in ${cityName} — and the only one where your stuff earns you money instead of costing you money.`,
+          `That is why 40% of our ${cityName} jobs come from repeat customers and referrals. People try us once, see the credits hit their bill, and never call another company again. They tell their neighbors, their coworkers, their property manager, their realtor. The word spreads because the model genuinely works better for ${cityName} residents. Your stuff has value. Stop giving it away. Text, call ${PHONE}, or book online — your ${cityName} crew is ready.`,
+        ],
+      },
     ],
   };
 }
