@@ -4,8 +4,43 @@ import { useState } from "react";
 
 export function BookingForm({ variant = "default" }: { variant?: "default" | "hero" | "dark" }) {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const isDark = variant === "dark" || variant === "hero";
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    setSubmitting(true);
+
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      type: "booking" as const,
+      name: String(fd.get("name") || ""),
+      phone: String(fd.get("phone") || ""),
+      zip: String(fd.get("zip") || ""),
+      when: String(fd.get("when") || ""),
+      details: String(fd.get("details") || ""),
+      source: typeof window !== "undefined" ? window.location.pathname : "",
+    };
+
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.error || "Submission failed");
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Something went wrong";
+      setError(`${msg}. Please call (888) 831-3001 instead.`);
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   if (submitted) {
     return (
@@ -18,7 +53,7 @@ export function BookingForm({ variant = "default" }: { variant?: "default" | "he
 
   return (
     <form
-      onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+      onSubmit={handleSubmit}
       className={`rounded-xl p-6 ${isDark ? "bg-white/10 backdrop-blur-sm" : "bg-white border border-slate-200 shadow-md"}`}
     >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -26,6 +61,7 @@ export function BookingForm({ variant = "default" }: { variant?: "default" | "he
           <label className={`block text-sm font-semibold mb-1 font-cta ${isDark ? "text-white/80" : "text-slate-700"}`}>Name</label>
           <input
             type="text"
+            name="name"
             required
             placeholder="Your name"
             className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
@@ -35,6 +71,7 @@ export function BookingForm({ variant = "default" }: { variant?: "default" | "he
           <label className={`block text-sm font-semibold mb-1 font-cta ${isDark ? "text-white/80" : "text-slate-700"}`}>Phone</label>
           <input
             type="tel"
+            name="phone"
             required
             placeholder="(555) 555-5555"
             className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
@@ -44,6 +81,7 @@ export function BookingForm({ variant = "default" }: { variant?: "default" | "he
           <label className={`block text-sm font-semibold mb-1 font-cta ${isDark ? "text-white/80" : "text-slate-700"}`}>Zip Code</label>
           <input
             type="text"
+            name="zip"
             required
             placeholder="10001"
             className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
@@ -52,6 +90,7 @@ export function BookingForm({ variant = "default" }: { variant?: "default" | "he
         <div>
           <label className={`block text-sm font-semibold mb-1 font-cta ${isDark ? "text-white/80" : "text-slate-700"}`}>When</label>
           <select
+            name="when"
             required
             className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
           >
@@ -67,16 +106,23 @@ export function BookingForm({ variant = "default" }: { variant?: "default" | "he
       <div className="mt-4">
         <label className={`block text-sm font-semibold mb-1 font-cta ${isDark ? "text-white/80" : "text-slate-700"}`}>What do you need removed?</label>
         <textarea
+          name="details"
           rows={3}
           placeholder="Describe what you need hauled away..."
           className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
         />
       </div>
+      {error && (
+        <p className={`mt-3 rounded-md p-2 text-sm ${isDark ? "bg-red-500/20 text-red-100" : "bg-red-50 text-red-700"}`}>
+          {error}
+        </p>
+      )}
       <button
         type="submit"
-        className="mt-4 w-full rounded-lg bg-accent py-3.5 text-base font-bold text-white transition-colors hover:bg-accent-dark font-cta"
+        disabled={submitting}
+        className="mt-4 w-full rounded-lg bg-accent py-3.5 text-base font-bold text-white transition-colors hover:bg-accent-dark disabled:opacity-60 font-cta"
       >
-        Book Now — We&apos;ll Call You
+        {submitting ? "Sending..." : "Book Now — We'll Call You"}
       </button>
       <p className={`mt-2 text-center text-xs ${isDark ? "text-white/40" : "text-slate-400"}`}>
         starting at $100/hr &bull; 1 hour minimum &bull; Dump fees included (an industry first) &bull; 50% Resale Credit (when applicable)
