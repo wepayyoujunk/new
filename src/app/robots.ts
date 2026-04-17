@@ -9,7 +9,11 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://www.wepayyoujunkremoval.com/sitemap.xml",
+    sitemap: [
+      "https://www.wepayyoujunkremoval.com/sitemap/0.xml",
+      "https://www.wepayyoujunkremoval.com/sitemap/1.xml",
+      "https://www.wepayyoujunkremoval.com/sitemap/2.xml",
+    ],
     host: "https://www.wepayyoujunkremoval.com",
   };
 }
