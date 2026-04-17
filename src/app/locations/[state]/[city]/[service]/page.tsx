@@ -17,7 +17,7 @@ function isTipsSlug(slug: string) {
 export const dynamicParams = true;
 
 export function generateStaticParams() {
-  const topCities = getTopCitiesPerState(5);
+  const topCities = getTopCitiesPerState(1);
   const params: { state: string; city: string; service: string }[] = [];
   for (const { state, city } of topCities) {
     for (const service of SERVICES) {

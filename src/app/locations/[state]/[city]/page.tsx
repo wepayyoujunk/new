@@ -16,7 +16,7 @@ function isStateGuide(slug: string) {
 export const dynamicParams = true;
 
 export function generateStaticParams() {
-  const cityParams = getTopCitiesPerState(5).map(({ state, city }) => ({
+  const cityParams = getTopCitiesPerState(1).map(({ state, city }) => ({
     state: state.slug,
     city: city.slug,
   }));

@@ -12,7 +12,7 @@ import { JobApplicationForm } from "@/components/JobApplicationForm";
 export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return getTopCitiesPerState(5).map(({ state, city }) => ({ state: state.slug, city: city.slug }));
+  return getTopCitiesPerState(1).map(({ state, city }) => ({ state: state.slug, city: city.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string; city: string }> }): Promise<Metadata> {

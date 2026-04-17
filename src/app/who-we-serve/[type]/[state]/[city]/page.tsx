@@ -13,7 +13,7 @@ import { customerCityContent } from "@/data/customer-content";
 export const dynamicParams = true;
 
 export function generateStaticParams() {
-  const topCities = getTopCitiesPerState(5);
+  const topCities = getTopCitiesPerState(1);
   const params: { type: string; state: string; city: string }[] = [];
   for (const ct of CUSTOMER_TYPES) {
     for (const { state, city } of topCities) {
