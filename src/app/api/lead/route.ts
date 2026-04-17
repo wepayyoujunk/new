@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getSupabaseServer } from "@/lib/supabase";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -18,6 +19,31 @@ interface LeadPayload {
   availability?: string;
   about?: string;
   source?: string;
+}
+
+async function saveToSupabase(payload: LeadPayload) {
+  const client = getSupabaseServer();
+  if (!client) return { sent: false, reason: "Supabase not configured" };
+
+  const { error } = await client.from("leads").insert({
+    type: payload.type,
+    name: payload.name ?? null,
+    phone: payload.phone ?? null,
+    email: payload.email ?? null,
+    zip: payload.zip ?? null,
+    city: payload.city ?? null,
+    state: payload.state ?? null,
+    when_needed: payload.when ?? null,
+    details: payload.details ?? null,
+    has_license: payload.hasLicense ?? null,
+    can_lift: payload.canLift ?? null,
+    availability: payload.availability ?? null,
+    about: payload.about ?? null,
+    source: payload.source ?? null,
+  });
+
+  if (error) return { sent: false, reason: `Supabase: ${error.message}` };
+  return { sent: true };
 }
 
 async function sendViaResend(payload: LeadPayload) {
@@ -77,15 +103,17 @@ export async function POST(request: Request) {
       );
     }
 
-    const [emailResult, webhookResult] = await Promise.all([
+    const [supabaseResult, emailResult, webhookResult] = await Promise.all([
+      saveToSupabase(payload),
       sendViaResend(payload),
       sendToWebhook(payload),
     ]);
 
-    const delivered = emailResult.sent || webhookResult.sent;
+    const delivered = supabaseResult.sent || emailResult.sent || webhookResult.sent;
 
     if (!delivered) {
       console.error("[lead] no delivery channel succeeded", {
+        supabase: supabaseResult.reason,
         email: emailResult.reason,
         webhook: webhookResult.reason,
         payload: { ...payload, phone: payload.phone?.slice(0, 4) + "***" },
