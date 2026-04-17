@@ -84,6 +84,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.6,
       });
+      entries.push({
+        url: `${SITE}/careers/${state.slug}/${city.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.4,
+      });
+      entries.push({
+        url: `${SITE}/locations/${state.slug}/${city.slug}/junk-removal-in-${city.slug}-guide-tips-and-costs`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.5,
+      });
+
+      for (const service of SERVICES) {
+        entries.push({
+          url: `${SITE}/locations/${state.slug}/${city.slug}/${service.slug}`,
+          lastModified: now,
+          changeFrequency: "monthly",
+          priority: 0.5,
+        });
+      }
     }
   }
 
