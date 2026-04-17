@@ -87,5 +87,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  for (const ct of CUSTOMER_TYPES) {
+    for (const state of STATES) {
+      entries.push({
+        url: `${SITE}/who-we-serve/${ct.slug}/${state.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
+
+      for (const city of state.cities) {
+        entries.push({
+          url: `${SITE}/who-we-serve/${ct.slug}/${state.slug}/${city.slug}`,
+          lastModified: now,
+          changeFrequency: "monthly",
+          priority: 0.5,
+        });
+      }
+    }
+
+    for (const service of SERVICES) {
+      entries.push({
+        url: `${SITE}/who-we-serve/${ct.slug}/${service.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
+    }
+  }
+
   return entries;
 }
