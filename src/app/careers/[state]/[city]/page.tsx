@@ -2,15 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PHONE, PHONE_HREF, SMS_HREF, EMAIL } from "@/data/content";
-import { getAllCities, getCityBySlug } from "@/data/cities";
+import { getTopCitiesPerState, getCityBySlug } from "@/data/cities";
 import { SERVICES } from "@/data/services";
 import { getOfficeByState } from "@/data/offices";
 import { OfficeBlock } from "@/components/OfficeBlock";
 import { CtaButtons } from "@/components/CtaButtons";
 import { JobApplicationForm } from "@/components/JobApplicationForm";
 
+export const dynamicParams = true;
+
 export function generateStaticParams() {
-  return getAllCities().map(({ state, city }) => ({ state: state.slug, city: city.slug }));
+  return getTopCitiesPerState(5).map(({ state, city }) => ({ state: state.slug, city: city.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string; city: string }> }): Promise<Metadata> {

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CtaButtons } from "@/components/CtaButtons";
 import { notFound } from "next/navigation";
 import { PHONE, PHONE_HREF, SMS_HREF } from "@/data/content";
-import { STATES, getAllCities, getCityBySlug, getStateBySlug } from "@/data/cities";
+import { STATES, getTopCitiesPerState, getCityBySlug, getStateBySlug } from "@/data/cities";
 import { SERVICES } from "@/data/services";
 import { cityPageContent } from "@/data/content-templates";
 import { getOfficeByState } from "@/data/offices";
@@ -13,12 +13,13 @@ function isStateGuide(slug: string) {
   return slug.includes("junk-removal-in-") && slug.endsWith("-guide-tips-and-costs");
 }
 
+export const dynamicParams = true;
+
 export function generateStaticParams() {
-  const cityParams = getAllCities().map(({ state, city }) => ({
+  const cityParams = getTopCitiesPerState(5).map(({ state, city }) => ({
     state: state.slug,
     city: city.slug,
   }));
-  // State guide pages
   const guideParams = STATES.map((s) => ({
     state: s.slug,
     city: `junk-removal-in-${s.slug}-guide-tips-and-costs`,

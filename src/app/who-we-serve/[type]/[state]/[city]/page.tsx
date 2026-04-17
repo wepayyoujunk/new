@@ -4,17 +4,19 @@ import { notFound } from "next/navigation";
 import { PHONE, PHONE_HREF, SMS_HREF } from "@/data/content";
 import { CUSTOMER_TYPES } from "@/data/customer-types";
 import { SERVICES } from "@/data/services";
-import { getAllCities, getCityBySlug } from "@/data/cities";
+import { getTopCitiesPerState, getCityBySlug } from "@/data/cities";
 import { getOfficeByState } from "@/data/offices";
 import { OfficeBlock } from "@/components/OfficeBlock";
 import { CtaButtons } from "@/components/CtaButtons";
 import { customerCityContent } from "@/data/customer-content";
 
+export const dynamicParams = true;
+
 export function generateStaticParams() {
-  const allCities = getAllCities();
+  const topCities = getTopCitiesPerState(5);
   const params: { type: string; state: string; city: string }[] = [];
   for (const ct of CUSTOMER_TYPES) {
-    for (const { state, city } of allCities) {
+    for (const { state, city } of topCities) {
       params.push({ type: ct.slug, state: state.slug, city: city.slug });
     }
   }

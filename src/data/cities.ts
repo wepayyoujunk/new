@@ -1378,6 +1378,13 @@ export function getAllCities(): { state: State; city: City }[] {
   );
 }
 
+/** Top N cities per state for prerendering. Long tail renders on-demand via ISR. */
+export function getTopCitiesPerState(perState = 5): { state: State; city: City }[] {
+  return STATES.flatMap((state) =>
+    state.cities.slice(0, perState).map((city) => ({ state, city }))
+  );
+}
+
 export const TOTAL_CITIES = STATES.reduce(
   (sum, state) => sum + state.cities.length,
   0
