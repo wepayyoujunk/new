@@ -6,7 +6,9 @@ import { BLOG_POSTS } from "@/data/blog-posts";
 
 const SITE = "https://www.wepayyoujunkremoval.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const CHUNK_SIZE = 25000;
+
+function buildAllEntries(): MetadataRoute.Sitemap {
   const now = new Date();
   const entries: MetadataRoute.Sitemap = [];
 
@@ -138,4 +140,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   return entries;
+}
+
+export async function generateSitemaps() {
+  const total = buildAllEntries().length;
+  const count = Math.ceil(total / CHUNK_SIZE);
+  return Array.from({ length: count }, (_, i) => ({ id: i }));
+}
+
+export default async function sitemap({ id }: { id: number }): Promise<MetadataRoute.Sitemap> {
+  const all = buildAllEntries();
+  const start = id * CHUNK_SIZE;
+  return all.slice(start, start + CHUNK_SIZE);
 }
