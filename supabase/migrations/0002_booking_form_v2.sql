@@ -21,14 +21,8 @@ on conflict (id) do update set
   file_size_limit = excluded.file_size_limit,
   allowed_mime_types = excluded.allowed_mime_types;
 
--- Public can read (so emailed links resolve).
+-- Public can read (so emailed links resolve). service_role bypasses RLS for writes.
 drop policy if exists "lead-media public read" on storage.objects;
 create policy "lead-media public read" on storage.objects
-  for select to anon, authenticated
+  for select to public
   using (bucket_id = 'lead-media');
-
--- Only service_role writes (the API uploads on behalf of the user).
-drop policy if exists "lead-media service write" on storage.objects;
-create policy "lead-media service write" on storage.objects
-  for all to service_role
-  using (bucket_id = 'lead-media') with check (bucket_id = 'lead-media');
