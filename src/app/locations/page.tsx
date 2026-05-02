@@ -64,7 +64,7 @@ export default function LocationsPage() {
                         <div className="mt-3 flex flex-wrap gap-2">
                           <a href={SMS_HREF} className="inline-block rounded-md bg-teal-700 px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-teal-800 font-cta">Text Us</a>
                           <a href={PHONE_HREF} className="inline-block rounded-md border border-teal-700 px-4 py-2 text-xs font-bold text-teal-700 transition-colors hover:bg-teal-50 font-cta">Call Us</a>
-                          <Link href="/book-junk-removal-service-today" className="inline-block rounded-md bg-accent px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-accent-dark font-cta">Book Now</Link>
+                          <Link href="/book-junk-removal-service-today" className="inline-block rounded-md bg-accent px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-accent-dark font-cta">Book Now &amp; Save $10</Link>
                         </div>
                       </div>
 

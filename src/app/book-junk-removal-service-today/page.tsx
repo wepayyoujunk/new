@@ -1,19 +1,7 @@
-"use client";
-
-import { useState, useCallback } from "react";
 import { PHONE, PHONE_HREF, EMAIL, HOURS } from "@/data/content";
-import { AddressAutocomplete } from "@/components/AddressAutocomplete";
+import { BookingForm } from "@/components/BookingForm";
 
 export default function BookPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [address, setAddress] = useState("");
-  const [addressConfirmed, setAddressConfirmed] = useState(false);
-
-  const handleAddressSelect = useCallback((details: { formatted: string }) => {
-    setAddress(details.formatted);
-    setAddressConfirmed(true);
-  }, []);
-
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 pt-36 pb-16 sm:pt-44 sm:pb-24">
@@ -70,96 +58,7 @@ export default function BookPage() {
 
             {/* Right — booking form */}
             <div>
-              {submitted ? (
-                <div className="rounded-xl bg-teal-50 border border-teal-200 p-10 text-center">
-                  <p className="text-2xl font-bold text-teal-700 font-heading">Booking received!</p>
-                  <p className="mt-3 text-base text-slate-600">Our team will call you shortly to confirm your pickup time and go over details.</p>
-                  <p className="mt-6 text-sm text-slate-500">Need it faster? Call us directly at <a href={PHONE_HREF} className="text-teal-700 font-bold">{PHONE}</a></p>
-                </div>
-              ) : (
-                <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="rounded-xl border border-slate-200 bg-white p-6 shadow-md space-y-4">
-                  <h2 className="text-xl font-bold text-slate-900 font-heading">Book Your Pickup</h2>
-                  <p className="text-sm text-slate-500">We&apos;ll call you to confirm. No payment required now.</p>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-1">Full Name *</label>
-                    <input type="text" required placeholder="Your name" className="w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-teal-500" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-1">Phone *</label>
-                    <input type="tel" required placeholder="(555) 555-5555" className="w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-teal-500" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-1">Email *</label>
-                    <input type="email" required placeholder="you@example.com" className="w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-teal-500" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-1">Service Type *</label>
-                    <select required className="w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-teal-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-teal-500 appearance-none">
-                      <option value="">Select service type...</option>
-                      <option value="full-service">Full-Service Junk Removal</option>
-                      <option value="furniture">Furniture Removal</option>
-                      <option value="appliance">Appliance Removal</option>
-                      <option value="garage">Garage Cleanout</option>
-                      <option value="basement">Basement Cleanout</option>
-                      <option value="estate">Estate Cleanout</option>
-                      <option value="construction">Construction Debris</option>
-                      <option value="yard">Yard Waste</option>
-                      <option value="office">Office / Commercial</option>
-                      <option value="hot-tub">Hot Tub / Spa Removal</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-1">Property Type *</label>
-                    <select required className="w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-teal-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-teal-500 appearance-none">
-                      <option value="">Select property type...</option>
-                      <option value="house">House</option>
-                      <option value="apartment">Apartment</option>
-                      <option value="condo">Condo / Townhouse</option>
-                      <option value="office">Office</option>
-                      <option value="warehouse">Warehouse / Industrial</option>
-                      <option value="retail">Retail / Commercial</option>
-                      <option value="storage">Storage Unit</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-1">Pickup Address *</label>
-                    <AddressAutocomplete
-                      value={address}
-                      onChange={setAddress}
-                      onSelect={handleAddressSelect}
-                      placeholder="Start typing your address..."
-                      className="w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-teal-500"
-                    />
-                    {addressConfirmed && (
-                      <p className="mt-1.5 text-xs text-teal-600 font-medium">
-                        ✓ Address confirmed
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-1">When Do You Need Pickup?</label>
-                    <select className="w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-teal-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-teal-500 appearance-none">
-                      <option value="">Select timing...</option>
-                      <option value="today">Today (same-day)</option>
-                      <option value="tomorrow">Tomorrow</option>
-                      <option value="this-week">This Week</option>
-                      <option value="next-week">Next Week</option>
-                      <option value="flexible">Flexible / No Rush</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-1">Describe What You Need Removed *</label>
-                    <textarea required rows={4} placeholder="Tell us what items need to go, approximately how many, and any access details (stairs, narrow hallways, etc.)..." className="w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-teal-500" />
-                  </div>
-                  <button type="submit" className="w-full rounded-lg bg-accent py-4 text-lg font-bold text-white transition-colors hover:bg-accent-dark font-cta">
-                    Book Now — We&apos;ll Call You
-                  </button>
-                  <p className="text-center text-xs text-slate-400">starting at $100/hr &bull; 1 hour minimum &bull; Dump fees included (an industry first) &bull; 50% Resale Credit (when applicable)</p>
-                </form>
-              )}
+              <BookingForm />
             </div>
           </div>
         </div>

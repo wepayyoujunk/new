@@ -12,6 +12,9 @@ interface LeadPayload {
   zip?: string;
   city?: string;
   state?: string;
+  address?: string;
+  pickupAt?: string;
+  mediaUrls?: string[];
   when?: string;
   details?: string;
   hasLicense?: string;
@@ -33,6 +36,9 @@ async function saveToSupabase(payload: LeadPayload) {
     zip: payload.zip ?? null,
     city: payload.city ?? null,
     state: payload.state ?? null,
+    address: payload.address ?? null,
+    pickup_at: payload.pickupAt ?? null,
+    media_urls: payload.mediaUrls ?? [],
     when_needed: payload.when ?? null,
     details: payload.details ?? null,
     has_license: payload.hasLicense ?? null,

@@ -77,7 +77,7 @@ export function Header() {
           <div className="hidden lg:flex justify-end">
             <Link href="/book-junk-removal-service-today">
               <span className="inline-block rounded-lg bg-white px-4 py-2 text-[15px] font-semibold text-teal-700 transition-colors hover:bg-teal-50 font-cta">
-                Book Now
+                Book Now &amp; Save $10
               </span>
             </Link>
           </div>
@@ -113,7 +113,7 @@ export function Header() {
               <span className="block w-full rounded-lg border border-slate-600 px-6 py-3 text-center text-base font-semibold text-white font-cta">Call {PHONE}</span>
             </a>
             <Link href="/book-junk-removal-service-today" onClick={() => setMobileOpen(false)} className="block">
-              <span className="block w-full rounded-lg bg-accent px-6 py-3 text-center text-base font-semibold text-white font-cta">Book Now</span>
+              <span className="block w-full rounded-lg bg-accent px-6 py-3 text-center text-base font-semibold text-white font-cta">Book Now &amp; Save $10</span>
             </Link>
           </div>
         </div>

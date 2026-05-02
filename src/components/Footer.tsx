@@ -88,7 +88,7 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4 font-cta">Get Started</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/book-junk-removal-service-today" className="text-teal-400 hover:text-teal-300 font-semibold transition-colors font-cta">Book Now</Link></li>
+              <li><Link href="/book-junk-removal-service-today" className="text-teal-400 hover:text-teal-300 font-semibold transition-colors font-cta">Book Now &amp; Save $10</Link></li>
               <li><Link href="/contact-we-pay-you-junk-removal-today" className="text-slate-400 hover:text-white transition-colors">Contact Us</Link></li>
               <li><a href={SMS_HREF} className="text-slate-400 hover:text-white transition-colors">Text Us</a></li>
               <li><a href={PHONE_HREF} className="text-slate-400 hover:text-white transition-colors">Call Us</a></li>

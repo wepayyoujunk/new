@@ -18,7 +18,7 @@ export function CtaButtons({ variant = "dark" }: { variant?: "dark" | "light" })
         </a>
         <Link href="/book-junk-removal-service-today">
           <span className="inline-block rounded-lg border-2 border-white/30 px-8 py-3.5 text-base font-semibold text-white transition-colors hover:border-white/60 font-cta">
-            Book Now
+            Book Now &amp; Save $10
           </span>
         </Link>
       </div>
@@ -39,7 +39,7 @@ export function CtaButtons({ variant = "dark" }: { variant?: "dark" | "light" })
       </a>
       <Link href="/book-junk-removal-service-today">
         <span className="inline-block rounded-lg border-2 border-slate-300 px-8 py-3.5 text-base font-semibold text-slate-700 transition-colors hover:bg-slate-50 font-cta">
-          Book Now
+          Book Now &amp; Save $10
         </span>
       </Link>
     </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CtaButtons } from "@/components/CtaButtons";
+import { PricingCalculator } from "@/components/PricingCalculator";
 import {
   PHONE,
   PHONE_HREF,
@@ -76,10 +77,17 @@ export default function HomePage() {
             </a>
             <Link href="/book-junk-removal-service-today">
               <span className="inline-block rounded-lg border-2 border-white/30 px-8 py-3.5 text-base font-semibold text-white transition-colors hover:border-white/60 font-cta">
-                Book Now
+                Book Now &amp; Save $10
               </span>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ─── PRICING CALCULATOR ─── */}
+      <section className="bg-section-white py-12 sm:py-16">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6">
+          <PricingCalculator />
         </div>
       </section>
 
@@ -538,7 +546,7 @@ export default function HomePage() {
                   ))}
                 </ul>
                 <Link href="/book-junk-removal-service-today" className={`mt-6 inline-block w-full rounded-lg py-3 text-center text-sm font-semibold transition-colors font-cta ${"popular" in tier && tier.popular ? "bg-accent text-white hover:bg-accent-dark" : "bg-teal-700 text-white hover:bg-teal-800"}`}>
-                  Book Now
+                  Book Now &amp; Save $10
                 </Link>
               </div>
             ))}
@@ -1226,7 +1234,7 @@ export default function HomePage() {
             </a>
             <Link href="/book-junk-removal-service-today">
               <span className="inline-block rounded-lg border-2 border-white/30 px-8 py-3.5 text-base font-semibold text-white transition-colors hover:border-white/60 font-cta">
-                Book Now
+                Book Now &amp; Save $10
               </span>
             </Link>
           </div>

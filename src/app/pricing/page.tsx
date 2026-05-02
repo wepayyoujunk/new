@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaButtons } from "@/components/CtaButtons";
+import { PricingCalculator } from "@/components/PricingCalculator";
 import { PHONE, PHONE_HREF, SMS_HREF, PRICING, CITY_COUNT, STATE_COUNT } from "@/data/content";
 
 export const metadata: Metadata = {
@@ -24,6 +25,13 @@ export default function PricingPage() {
             One rate. Everything included. Your valuable items earn you money back. Here&apos;s exactly how it works — no fine print, no gotchas.
           </p>
           <CtaButtons variant="dark" />
+        </div>
+      </section>
+
+      {/* ===== PRICING CALCULATOR ===== */}
+      <section className="bg-section-white py-12 sm:py-16">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6">
+          <PricingCalculator />
         </div>
       </section>
 
@@ -51,7 +59,7 @@ export default function PricingPage() {
                   ))}
                 </ul>
                 <Link href="/book-junk-removal-service-today" className={`mt-6 inline-block w-full rounded-lg py-3 text-center text-sm font-semibold transition-colors font-cta ${"popular" in tier && tier.popular ? "bg-accent text-white hover:bg-accent-dark" : "bg-teal-700 text-white hover:bg-teal-800"}`}>
-                  Book Now
+                  Book Now &amp; Save $10
                 </Link>
               </div>
             ))}
@@ -517,13 +525,13 @@ export default function PricingPage() {
       <section className="relative overflow-hidden bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 py-16">
         <div className="absolute inset-0 grid-bg opacity-30" />
         <div className="relative mx-auto max-w-5xl px-6 text-center">
-          <h2 className="text-center text-3xl font-bold text-white sm:text-4xl font-heading">starting at $100/hr. Dump Fees Included. 50% Resale Credit (when applicable). Book Now.</h2>
+          <h2 className="text-center text-3xl font-bold text-white sm:text-4xl font-heading">starting at $100/hr. Dump Fees Included. 50% Resale Credit (when applicable). Book Now &amp; Save $10.</h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
             Same-day available. No hidden fees. No contracts. Your stuff has value — let us prove it.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link href="/book-junk-removal-service-today">
-              <span className="inline-block rounded-lg bg-white px-8 py-3.5 text-base font-semibold text-teal-700 shadow-lg transition-colors hover:bg-teal-50 font-cta">Book Now</span>
+              <span className="inline-block rounded-lg bg-white px-8 py-3.5 text-base font-semibold text-teal-700 shadow-lg transition-colors hover:bg-teal-50 font-cta">Book Now &amp; Save $10</span>
             </Link>
             <a href={SMS_HREF}>
               <span className="inline-block rounded-lg border-2 border-white/30 px-8 py-3.5 text-base font-semibold text-white transition-colors hover:border-white/60 font-cta">Text {PHONE}</span>
