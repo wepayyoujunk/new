@@ -46,11 +46,20 @@ function getMinPickup(): string {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
 }
 
+function formatPhone(raw: string): string {
+  const digits = raw.replace(/\D/g, "").slice(0, 10);
+  if (digits.length === 0) return "";
+  if (digits.length < 4) return `(${digits}`;
+  if (digits.length < 7) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
+
 export function BookingForm({ variant = "default" }: { variant?: "default" | "hero" | "dark" }) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [addressMeta, setAddressMeta] = useState<AddressSuggestion | null>(null);
   const [suggestions, setSuggestions] = useState<AddressSuggestion[]>([]);
@@ -306,6 +315,9 @@ export function BookingForm({ variant = "default" }: { variant?: "default" | "he
             autoComplete="tel"
             inputMode="tel"
             placeholder="(555) 555-5555"
+            value={phone}
+            onChange={(e) => setPhone(formatPhone(e.target.value))}
+            maxLength={14}
             className={inputClass}
           />
           <p className={tipClass}>We&apos;ll text to confirm — make sure it can receive SMS.</p>
