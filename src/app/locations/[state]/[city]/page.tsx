@@ -8,6 +8,7 @@ import { SERVICES } from "@/data/services";
 import { cityPageContent } from "@/data/content-templates";
 import { getOfficeByState } from "@/data/offices";
 import { OfficeBlock } from "@/components/OfficeBlock";
+import { ValuationHint } from "@/components/ValuationHint";
 
 function isStateGuide(slug: string) {
   return slug.includes("junk-removal-in-") && slug.endsWith("-guide-tips-and-costs");
@@ -80,9 +81,10 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
               From <Link href={`/locations/${stateSlug}`} className="text-teal-700 font-semibold hover:underline">{state.cities.length} cities served</Link> to <Link href="/pricing" className="text-teal-700 font-semibold hover:underline">transparent pricing</Link> to <Link href="/services" className="text-teal-700 font-semibold hover:underline">34 service types</Link>.
             </p>
             <div className="mx-auto mt-8 max-w-3xl space-y-5 text-center text-base leading-relaxed text-slate-700">
-              <p>Here&apos;s the industry secret every {state.name} resident should know: <strong>every junk removal company in {state.abbreviation} has been charging you for the service AND keeping 35%+ of your items to resell for profit.</strong> We Pay You Junk Removal is the only company in {state.name} that credits you 50% (when applicable) of resale value. Starting at $100/hr with dump fees included (an industry first).</p>
+              <p>Here&apos;s the industry secret every {state.name} resident should know: <strong>every junk removal company in {state.abbreviation} has been keeping 35%+ of your items to resell for profit.</strong> We Pay You Junk Removal is the only company in {state.name} that credits you 50% (when applicable) of resale value. $200/hr per man with dump fees included (an industry first).</p>
               <p>Our {state.abbreviation} crews know the local resale markets, recycling centers, and donation partners in your area. That local knowledge means better appraisals, faster jobs, and more money back in your pocket.</p>
             </div>
+            <ValuationHint className="mx-auto mt-8 max-w-3xl" />
           </div>
         </section>
 
@@ -152,13 +154,19 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
             Junk Removal in <span className="gradient-text">{city.name}, {state.abbreviation}</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
-            The only junk removal company in {city.name} that pays you. starting at $100/hr, dump fees included, 50% Resale Credit (when applicable).
+            The only junk removal company in {city.name} that pays you. $200/hr per man, dump fees included, 50% Resale Credit (when applicable).
           </p>
           <CtaButtons variant="dark" />
         </div>
       </section>
 
       {office && <OfficeBlock office={office} cityName={city.name} />}
+
+      <section className="bg-section-white pt-8">
+        <div className="mx-auto max-w-3xl px-6">
+          <ValuationHint />
+        </div>
+      </section>
 
       {/* Long-form content */}
       {content.sections.map((section, i) => (
@@ -227,7 +235,7 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
             Book Junk Removal in {city.name} Today
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
-            Same-day available. starting at $100/hr. Dump fees included (an industry first). 50% Resale Credit (when applicable).
+            Same-day available. $200/hr per man. Dump fees included (an industry first). 50% Resale Credit (when applicable).
           </p>
           <div className="mt-8">
             <a href={PHONE_HREF}>

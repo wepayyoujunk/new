@@ -6,56 +6,59 @@ import { useMemo, useState } from "react";
 interface Item {
   id: string;
   name: string;
-  minutes: number; // time to load 1 unit
-  resale: number; // fair market value (we credit 50%)
+  minutes: number; // total time for 1 unit on the 2-person crew, including pickup + dropoff
   category: "Furniture" | "Appliances" | "Electronics" | "Fitness" | "Outdoor" | "General";
 }
 
-// Conservative time/value estimates — final pricing set on-site by the crew.
+// Real-world per-item times for the 2-person crew, pickup + dropoff included.
+// Anchors from Jeff: couch = 60 min, mattress = 30 min, sectional = 120 min.
 const ITEMS: Item[] = [
   // Furniture
-  { id: "couch", name: "Couch / Sofa", minutes: 15, resale: 200, category: "Furniture" },
-  { id: "sectional", name: "Sectional", minutes: 25, resale: 300, category: "Furniture" },
-  { id: "armchair", name: "Armchair / Recliner", minutes: 10, resale: 80, category: "Furniture" },
-  { id: "mattress-q", name: "Mattress (Q/K)", minutes: 15, resale: 0, category: "Furniture" },
-  { id: "mattress-t", name: "Mattress (Twin/Full)", minutes: 10, resale: 0, category: "Furniture" },
-  { id: "boxspring", name: "Box Spring", minutes: 8, resale: 0, category: "Furniture" },
-  { id: "dining-table", name: "Dining Table", minutes: 15, resale: 150, category: "Furniture" },
-  { id: "dresser", name: "Dresser / Bookshelf", minutes: 10, resale: 80, category: "Furniture" },
-  { id: "desk", name: "Office Desk", minutes: 12, resale: 80, category: "Furniture" },
-  { id: "office-chair", name: "Office Chair", minutes: 5, resale: 40, category: "Furniture" },
+  { id: "couch", name: "Couch / Sofa", minutes: 60, category: "Furniture" },
+  { id: "sectional", name: "Sectional", minutes: 120, category: "Furniture" },
+  { id: "armchair", name: "Armchair / Recliner", minutes: 45, category: "Furniture" },
+  { id: "mattress-q", name: "Mattress (Q/K)", minutes: 30, category: "Furniture" },
+  { id: "mattress-t", name: "Mattress (Twin/Full)", minutes: 30, category: "Furniture" },
+  { id: "boxspring", name: "Box Spring", minutes: 30, category: "Furniture" },
+  { id: "dining-table", name: "Dining Table", minutes: 60, category: "Furniture" },
+  { id: "dresser", name: "Dresser / Bookshelf", minutes: 45, category: "Furniture" },
+  { id: "desk", name: "Office Desk", minutes: 45, category: "Furniture" },
+  { id: "office-chair", name: "Office Chair", minutes: 20, category: "Furniture" },
   // Appliances
-  { id: "fridge", name: "Refrigerator", minutes: 20, resale: 200, category: "Appliances" },
-  { id: "washer-dryer", name: "Washer or Dryer", minutes: 15, resale: 150, category: "Appliances" },
-  { id: "stove", name: "Stove / Oven", minutes: 15, resale: 100, category: "Appliances" },
-  { id: "dishwasher", name: "Dishwasher", minutes: 12, resale: 80, category: "Appliances" },
-  { id: "microwave", name: "Microwave", minutes: 5, resale: 40, category: "Appliances" },
+  { id: "fridge", name: "Refrigerator", minutes: 60, category: "Appliances" },
+  { id: "washer-dryer", name: "Washer or Dryer", minutes: 45, category: "Appliances" },
+  { id: "stove", name: "Stove / Oven", minutes: 45, category: "Appliances" },
+  { id: "dishwasher", name: "Dishwasher", minutes: 30, category: "Appliances" },
+  { id: "microwave", name: "Microwave", minutes: 15, category: "Appliances" },
   // Electronics
-  { id: "tv", name: "TV (large)", minutes: 8, resale: 80, category: "Electronics" },
-  { id: "computer", name: "Computer / Monitor", minutes: 5, resale: 60, category: "Electronics" },
-  { id: "stereo", name: "Stereo / Speakers", minutes: 5, resale: 80, category: "Electronics" },
+  { id: "tv", name: "TV (large)", minutes: 20, category: "Electronics" },
+  { id: "computer", name: "Computer / Monitor", minutes: 15, category: "Electronics" },
+  { id: "stereo", name: "Stereo / Speakers", minutes: 20, category: "Electronics" },
   // Fitness
-  { id: "treadmill", name: "Treadmill", minutes: 25, resale: 200, category: "Fitness" },
-  { id: "bowflex", name: "Bowflex / Weight Set", minutes: 25, resale: 150, category: "Fitness" },
-  { id: "bike", name: "Bicycle", minutes: 5, resale: 80, category: "Fitness" },
+  { id: "treadmill", name: "Treadmill", minutes: 90, category: "Fitness" },
+  { id: "bowflex", name: "Bowflex / Weight Set", minutes: 90, category: "Fitness" },
+  { id: "bike", name: "Bicycle", minutes: 15, category: "Fitness" },
   // Outdoor
-  { id: "grill", name: "BBQ Grill", minutes: 10, resale: 80, category: "Outdoor" },
-  { id: "hottub", name: "Hot Tub", minutes: 90, resale: 0, category: "Outdoor" },
-  { id: "shed", name: "Shed (small)", minutes: 120, resale: 0, category: "Outdoor" },
-  { id: "yard", name: "Yard Debris (pile)", minutes: 20, resale: 0, category: "Outdoor" },
+  { id: "grill", name: "BBQ Grill", minutes: 30, category: "Outdoor" },
+  { id: "hottub", name: "Hot Tub", minutes: 180, category: "Outdoor" },
+  { id: "shed", name: "Shed (small)", minutes: 180, category: "Outdoor" },
+  { id: "yard", name: "Yard Debris (pile)", minutes: 45, category: "Outdoor" },
   // General
-  { id: "boxes", name: "Boxes / Bags", minutes: 3, resale: 0, category: "General" },
-  { id: "tools", name: "Power Tools / Toolbox", minutes: 5, resale: 100, category: "General" },
-  { id: "carpet", name: "Carpet / Rug Roll", minutes: 8, resale: 0, category: "General" },
-  { id: "piano", name: "Upright Piano", minutes: 60, resale: 200, category: "General" },
+  { id: "boxes", name: "Boxes / Bags", minutes: 10, category: "General" },
+  { id: "tools", name: "Power Tools / Toolbox", minutes: 15, category: "General" },
+  { id: "carpet", name: "Carpet / Rug Roll", minutes: 20, category: "General" },
+  { id: "piano", name: "Upright Piano", minutes: 120, category: "General" },
 ];
 
 const CATEGORIES: Item["category"][] = ["Furniture", "Appliances", "Electronics", "Fitness", "Outdoor", "General"];
 
 type CrewKey = "solo" | "standard";
+// Base item minutes are calibrated to the 2-person crew (speed = 1).
+// 1-person crew is slower per item (speed = 0.6 → ~67% longer).
+// Flat $200/hr per man — no tiers, no surcharges.
 const CREW: Record<CrewKey, { label: string; rate: number; speed: number; subtitle: string }> = {
-  solo: { label: "1 Person Crew", rate: 100, speed: 1, subtitle: "$100/hr • small jobs" },
-  standard: { label: "2 Person Crew", rate: 250, speed: 1.6, subtitle: "$250/hr • most popular" },
+  solo: { label: "1 Man", rate: 200, speed: 0.6, subtitle: "$200/hr • small jobs" },
+  standard: { label: "2 Men", rate: 400, speed: 1, subtitle: "$400/hr • most jobs" },
 };
 
 function formatUSD(n: number): string {
@@ -71,13 +74,11 @@ export function PricingCalculator({ variant = "default" }: { variant?: "default"
 
   const totals = useMemo(() => {
     let minutes = 0;
-    let resale = 0;
     let count = 0;
     for (const item of ITEMS) {
       const q = qty[item.id] ?? 0;
       if (q <= 0) continue;
       minutes += item.minutes * q;
-      resale += item.resale * q;
       count += q;
     }
     const adjMinutes = minutes / CREW[crew].speed;
@@ -85,10 +86,8 @@ export function PricingCalculator({ variant = "default" }: { variant?: "default"
     // Round up to nearest 0.5 hr, min 1 hr if anything selected.
     const billedHours = count === 0 ? 0 : Math.max(1, Math.ceil(rawHours * 2) / 2);
     const labor = billedHours * CREW[crew].rate;
-    const credit = Math.round(resale * 0.5);
-    const subtotal = labor - credit;
-    const total = Math.max(0, subtotal - 10); // -$10 booking discount
-    return { count, billedHours, labor, credit, total, hadCredit: credit > 0, hadDiscount: count > 0 };
+    const total = Math.max(0, labor - 10); // -$10 booking discount
+    return { count, billedHours, labor, total, hadDiscount: count > 0 };
   }, [qty, crew]);
 
   function bump(id: string, delta: number) {
@@ -120,7 +119,7 @@ export function PricingCalculator({ variant = "default" }: { variant?: "default"
           <h3 className="mt-1 text-xl font-bold text-slate-900 font-heading sm:text-2xl">
             What&apos;s your junk removal cost?
           </h3>
-          <p className="mt-1 text-xs text-slate-500">Tap items below. We&apos;ll estimate hours, labor, and resale credit.</p>
+          <p className="mt-1 text-xs text-slate-500">Tap items below. We&apos;ll estimate hours and labor. Pickup and dropoff included.</p>
         </div>
         {totals.count > 0 && (
           <button
@@ -179,7 +178,6 @@ export function PricingCalculator({ variant = "default" }: { variant?: "default"
       <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
         {items.map((item) => {
           const q = qty[item.id] ?? 0;
-          const hasResale = item.resale > 0;
           return (
             <li
               key={item.id}
@@ -189,9 +187,6 @@ export function PricingCalculator({ variant = "default" }: { variant?: "default"
             >
               <div className="min-w-0">
                 <p className="truncate text-sm font-semibold text-slate-800">{item.name}</p>
-                {hasResale && (
-                  <p className="text-[10px] font-semibold text-emerald-700">Resale credit possible</p>
-                )}
               </div>
               <div className="flex shrink-0 items-center gap-1.5">
                 <button
@@ -235,12 +230,6 @@ export function PricingCalculator({ variant = "default" }: { variant?: "default"
                 <span className="text-white/70">Labor ({CREW[crew].label})</span>
                 <span className="font-semibold tabular-nums">{formatUSD(totals.labor)}</span>
               </div>
-              {totals.hadCredit && (
-                <div className="flex items-center justify-between text-emerald-300">
-                  <span>50% Resale Credit</span>
-                  <span className="font-semibold tabular-nums">−{formatUSD(totals.credit)}</span>
-                </div>
-              )}
               {totals.hadDiscount && (
                 <div className="flex items-center justify-between text-amber-300">
                   <span>Online booking discount</span>
@@ -252,12 +241,15 @@ export function PricingCalculator({ variant = "default" }: { variant?: "default"
               <span className="text-sm font-semibold uppercase tracking-widest text-white/70 font-cta">Estimated Total</span>
               <span className="text-3xl font-bold tabular-nums font-heading">{formatUSD(totals.total)}</span>
             </div>
+            <p className="mt-3 text-[11px] leading-snug text-emerald-300">
+              This is an estimate only. After you book, we&apos;ll value any items with fair resale value and credit you 50% — that comes off this total at pickup.
+            </p>
           </>
         )}
       </div>
 
       <p className="mt-3 text-[11px] leading-snug text-slate-500">
-        Estimate only. Final pricing is set on-site once our crew sees the items, access, and stairs. Resale credits depend on condition. 1-hour minimum, dump fees included.
+        Estimate only. Final pricing is set on-site once our crew sees the items, access, and stairs. Pickup and dropoff included. 1-hour minimum, dump fees included. Item valuation happens after this estimate — we credit 50% of fair resale value on anything worth keeping.
       </p>
 
       <Link

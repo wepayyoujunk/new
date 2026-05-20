@@ -6,6 +6,7 @@ import { CUSTOMER_TYPES } from "@/data/customer-types";
 import { SERVICES } from "@/data/services";
 import { STATES } from "@/data/cities";
 import { CtaButtons } from "@/components/CtaButtons";
+import { ValuationHint } from "@/components/ValuationHint";
 import { customerTypeContent } from "@/data/customer-content";
 
 export function generateStaticParams() {
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   if (!ct) return {};
   return {
     title: `Junk Removal for ${ct.name} — We Pay You for Your Stuff`,
-    description: `${ct.description} Starting at $100/hr, dump fees included, 50% Resale Credit (when applicable). ${CITY_COUNT}+ cities.`,
+    description: `${ct.description} $200/hr per man, dump fees included, 50% Resale Credit (when applicable). ${CITY_COUNT}+ cities.`,
     alternates: { canonical: `/who-we-serve/${type}` },
   };
 }
@@ -57,6 +58,7 @@ export default async function CustomerTypePage({ params }: { params: Promise<{ t
               <p key={i}>{p}</p>
             ))}
           </div>
+          <ValuationHint className="mx-auto mt-8 max-w-3xl" />
         </div>
       </section>
 

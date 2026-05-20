@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PHONE, PHONE_HREF, SMS_HREF, EMAIL } from "@/data/content";
 import { STATES, getStateBySlug } from "@/data/cities";
 import { getOfficeByState } from "@/data/offices";
 import { OfficeBlock } from "@/components/OfficeBlock";
@@ -17,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const state = getStateBySlug(stateSlug);
   if (!state) return {};
   return {
-    title: `Junk Removal Jobs in ${state.name} — We're Hiring in ${state.cities.length} Cities`,
-    description: `Join We Pay You Junk Removal in ${state.name}. Hiring crew members in ${state.cities.length} cities across ${state.abbreviation}. Competitive pay, tips, benefits, growth. Apply today.`,
+    title: `Junk Removal Contractor Jobs in ${state.name} — 1099, Truck or Trailer Required`,
+    description: `1099 junk removal contractor positions in ${state.name}. ${state.cities.length} cities. $100/hr per man + 50% of items we resell. Bring your own truck or trailer.`,
     alternates: { canonical: `/careers/${stateSlug}` },
   };
 }
@@ -34,12 +33,12 @@ export default async function StateJobsPage({ params }: { params: Promise<{ stat
       <section className="relative overflow-hidden bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 pt-36 pb-16 sm:pt-44 sm:pb-24">
         <div className="absolute inset-0 grid-bg opacity-30" />
         <div className="relative mx-auto max-w-5xl px-6 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-200 font-cta">Now Hiring in {state.cities.length} {state.abbreviation} Cities</p>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-200 font-cta">Now Hiring 1099 Contractors in {state.cities.length} {state.abbreviation} Cities</p>
           <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl font-heading">
-            Junk Removal Jobs in <span className="gradient-text">{state.name}</span>
+            Junk Removal Contractor Jobs in <span className="gradient-text">{state.name}</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
-            Join the only junk removal company that pays customers. We&apos;re hiring crew members, team leads, and drivers across {state.name}.
+            Have a truck or trailer? We hand you the customers. You run the job, keep $100/hr per man, plus 50% of items we resell.
           </p>
           <CtaButtons variant="dark" />
         </div>
@@ -47,23 +46,23 @@ export default async function StateJobsPage({ params }: { params: Promise<{ stat
 
       <section className="bg-section-white py-16">
         <div className="mx-auto max-w-5xl px-6">
-          <p className="text-center text-sm font-semibold uppercase tracking-widest text-teal-600 font-cta">Junk Removal Crew Member Positions in {state.abbreviation}</p>
-          <h2 className="mt-3 text-center text-3xl font-bold text-slate-900 font-heading">Why Work for We Pay You Junk Removal in {state.name}?</h2>
+          <p className="text-center text-sm font-semibold uppercase tracking-widest text-teal-600 font-cta">Owner-Operator Junk Removal in {state.abbreviation}</p>
+          <h2 className="mt-3 text-center text-3xl font-bold text-slate-900 font-heading">Why Run Jobs With Us in {state.name}?</h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
-            We&apos;re not your typical hauling company. Our crews are trained appraisers who identify value in every item. Learn about our <Link href="/pricing" className="text-teal-700 font-semibold hover:underline">pricing model</Link>, explore <Link href="/services" className="text-teal-700 font-semibold hover:underline">all 34 services</Link> you&apos;ll deliver, and see our <Link href={`/locations/${stateSlug}`} className="text-teal-700 font-semibold hover:underline">{state.name} office</Link>.
+            We&apos;re not a typical hauling company. We send you booked, paid jobs in your area — you bring the truck/trailer and run them on your schedule. Learn about our <Link href="/pricing" className="text-teal-700 font-semibold hover:underline">pricing model</Link>, explore <Link href="/services" className="text-teal-700 font-semibold hover:underline">all 34 services</Link> you&apos;ll deliver, and see our <Link href={`/locations/${stateSlug}`} className="text-teal-700 font-semibold hover:underline">{state.name} office</Link>.
           </p>
           <div className="mx-auto mt-8 max-w-3xl space-y-5 text-center text-base leading-relaxed text-slate-700">
-            <p>Working for We Pay You Junk Removal in {state.name} means joining a team that does things differently. Our crew members don&apos;t just haul junk — they&apos;re trained to spot value, appraise items fairly, and deliver an experience that makes customers say &quot;I can&apos;t believe a junk company just paid me.&quot; That positive energy makes every day better — better tips, better reviews, better job satisfaction.</p>
-            <p>We&apos;re growing fast in {state.name}. With {state.cities.length} cities served and more launching every month, there are constant opportunities for advancement — from crew member to team lead to operations manager. We promote from within and reward performance.</p>
+            <p>Running jobs with We Pay You Junk Removal in {state.name} means independence. You decide which jobs to take, when to work, and how to route your day. We handle the marketing, the booking, the payment processing, and the resale logistics — you just show up and do the work.</p>
+            <p>{state.cities.length} cities active in {state.name} and growing. The more contractors we have, the more jobs we route — and busy markets mean steady work for the people who run them.</p>
           </div>
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: "$50/Hour", desc: "Crew members earn $50/hr from day one. No experience required — we train you. That's $400/day on a standard 8-hour shift." },
-              { title: "Tips on Top", desc: "Customers tip well when you save them money. Average crew members earn $50–$150/day in tips on top of hourly pay." },
-              { title: "Paid Training", desc: "Full paid training covering safe handling, item appraisal, customer service, and truck operations. You earn while you learn." },
-              { title: "Flexible Schedule", desc: "Full-time and part-time available. Pick your days. We operate 7AM–8PM, 7 days a week." },
-              { title: "Growth Path", desc: "Crew Member → Team Lead ($60/hr) → Operations Manager (salary). We promote from within, always." },
-              { title: "Full Benefits", desc: "Health insurance, paid time off, and 401k for full-time employees. Part-time gets flexible scheduling and tips." },
+              { title: "$100/hr per man", desc: "Paid weekly on every job hour. Bring a helper, they get $100/hr too." },
+              { title: "50% of resale", desc: "Items you bring in that we resell — half is yours, paid when items sell." },
+              { title: "Your schedule", desc: "Accept the jobs that fit. Pass the rest. No quotas, no shifts." },
+              { title: "Pre-booked customers", desc: "Customer paid the deposit. Address, items, hours — all in the app before you accept." },
+              { title: "Run multiple jobs/day", desc: "Most contractors run 2–4 jobs per day depending on size and market." },
+              { title: "1099 independence", desc: "You're your own boss. You handle your taxes, fuel, vehicle costs, and dump fees." },
             ].map((item) => (
               <div key={item.title} className="rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-teal-400 hover:shadow-md">
                 <h3 className="text-base font-bold text-slate-900 font-heading">{item.title}</h3>
@@ -78,7 +77,7 @@ export default async function StateJobsPage({ params }: { params: Promise<{ stat
         <div className="mx-auto max-w-5xl px-6">
           <p className="text-center text-sm font-semibold uppercase tracking-widest text-teal-600 font-cta">Hiring in {state.cities.length} {state.name} Cities</p>
           <h2 className="mt-3 text-center text-3xl font-bold text-slate-900 font-heading">Cities Hiring in {state.name}</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">Click your city to see the local job listing and apply. Every city has positions available for crew members and drivers.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">Click your city to see the local listing and apply. Every city has open contractor slots.</p>
           <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {state.cities.map((city) => (
               <Link key={city.slug} href={`/careers/${stateSlug}/${city.slug}`}
@@ -91,23 +90,22 @@ export default async function StateJobsPage({ params }: { params: Promise<{ stat
         </div>
       </section>
 
-      {/* Requirements */}
       <section className="bg-section-white py-16">
         <div className="mx-auto max-w-5xl px-6">
-          <p className="text-center text-sm font-semibold uppercase tracking-widest text-teal-600 font-cta">Junk Removal Job Requirements in {state.abbreviation}</p>
+          <p className="text-center text-sm font-semibold uppercase tracking-widest text-teal-600 font-cta">Junk Removal Contractor Requirements in {state.abbreviation}</p>
           <h2 className="mt-3 text-center text-3xl font-bold text-slate-900 font-heading">Requirements — What You Need to Apply</h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
-            No prior junk removal experience needed. We provide full paid training. Here&apos;s what you do need. See our <Link href="/about" className="text-teal-700 font-semibold hover:underline">company values</Link> and <Link href="/services" className="text-teal-700 font-semibold hover:underline">the services you&apos;ll deliver</Link>.
+            Owner-operator role. You bring the truck/trailer, we bring the customers and the appraisal training. See our <Link href="/about" className="text-teal-700 font-semibold hover:underline">company values</Link> and <Link href="/services" className="text-teal-700 font-semibold hover:underline">the services you&apos;ll deliver</Link>.
           </p>
           <div className="mx-auto mt-8 max-w-2xl grid grid-cols-1 gap-4 sm:grid-cols-2">
             {[
+              { req: "Truck OR trailer", detail: "Trailer is the minimum — pickup with trailer is ideal" },
               { req: "Valid driver's license", detail: "Clean driving record required" },
-              { req: "Lift 50+ lbs repeatedly", detail: "This is a physical job — all day, every day" },
-              { req: "Reliable transportation", detail: "To get to the dispatch location on time" },
-              { req: "Smartphone with data plan", detail: "For scheduling, navigation, and appraisal tools" },
+              { req: "Vehicle insurance", detail: "Proof required at sign-up" },
+              { req: "Lift 50+ lbs repeatedly", detail: "Physical job — all day, every day" },
+              { req: "Smartphone with data plan", detail: "For accepting jobs and on-site appraisals" },
               { req: "Pass background check", detail: "You'll be entering customers' homes" },
-              { req: "Customer service attitude", detail: "Friendly, professional, communicative" },
-              { req: "Available weekends", detail: "Our busiest days — at least 1 weekend day" },
+              { req: "Available weekends", detail: "Busiest days — at least 1 weekend day" },
               { req: "18+ years old", detail: "Must be legally eligible to work in the US" },
             ].map((item) => (
               <div key={item.req} className="flex items-start gap-3 rounded-lg border border-slate-200 bg-white p-4">
@@ -124,28 +122,27 @@ export default async function StateJobsPage({ params }: { params: Promise<{ stat
 
       {office && <OfficeBlock office={office} />}
 
-      {/* Application form */}
       <section className="bg-section-teal py-16">
         <div className="mx-auto max-w-5xl px-6">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-teal-600 font-cta">Apply for $50/hr Junk Removal Jobs in {state.name}</p>
+              <p className="text-sm font-semibold uppercase tracking-widest text-teal-600 font-cta">Apply for Junk Removal Contractor Position in {state.name}</p>
               <h2 className="mt-3 text-3xl font-bold text-slate-900 font-heading">Apply Now — {state.name}</h2>
               <p className="mt-4 text-base text-slate-600">
-                Fill out the form and we&apos;ll call you within 48 hours. No resume needed. No experience required.
+                Fill out the form. We&apos;ll call you within 48 hours. Bring your truck/trailer info.
               </p>
               <div className="mt-6 space-y-4">
                 <div className="rounded-lg bg-white border border-slate-200 p-4">
-                  <p className="text-2xl font-bold text-teal-700 font-heading">$50/hr</p>
-                  <p className="text-sm text-slate-600">Starting pay for all crew members</p>
+                  <p className="text-2xl font-bold text-teal-700 font-heading">$100/hr per man</p>
+                  <p className="text-sm text-slate-600">Paid weekly on every job hour</p>
                 </div>
                 <div className="rounded-lg bg-white border border-slate-200 p-4">
-                  <p className="text-2xl font-bold text-teal-700 font-heading">$50–$150/day</p>
-                  <p className="text-sm text-slate-600">Average tips on top of hourly pay</p>
+                  <p className="text-2xl font-bold text-teal-700 font-heading">50% of resale</p>
+                  <p className="text-sm text-slate-600">Items we resell from your loads</p>
                 </div>
                 <div className="rounded-lg bg-white border border-slate-200 p-4">
-                  <p className="text-2xl font-bold text-teal-700 font-heading">$60/hr</p>
-                  <p className="text-sm text-slate-600">Team Lead promotion rate</p>
+                  <p className="text-2xl font-bold text-teal-700 font-heading">Your schedule</p>
+                  <p className="text-sm text-slate-600">Accept the jobs that fit</p>
                 </div>
               </div>
             </div>

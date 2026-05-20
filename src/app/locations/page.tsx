@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaButtons } from "@/components/CtaButtons";
+import { ValuationHint } from "@/components/ValuationHint";
 import { PHONE, PHONE_HREF, SMS_HREF, CITY_COUNT, STATE_COUNT } from "@/data/content";
 import { STATES, TOTAL_CITIES } from "@/data/cities";
 import { OFFICES } from "@/data/offices";
@@ -24,7 +25,7 @@ export default function LocationsPage() {
             We Pay You Junk Removal <span className="gradient-text">Locations</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
-            One office in every state. {TOTAL_CITIES}+ cities served nationwide. starting at $100/hr, dump fees included, 50% Resale Credit (when applicable) on valuable items.
+            One office in every state. {TOTAL_CITIES}+ cities served nationwide. $200/hr per man, dump fees included, 50% Resale Credit (when applicable) on valuable items.
           </p>
           <CtaButtons variant="dark" />
         </div>
@@ -38,6 +39,8 @@ export default function LocationsPage() {
             All 50 We Pay You Junk Removal Offices
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">Every state has a local office with crews who know your area. Browse our <Link href="/services" className="text-teal-700 font-semibold hover:underline">full service menu</Link>, review our <Link href="/pricing" className="text-teal-700 font-semibold hover:underline">transparent hourly pricing</Link>, or <Link href="/book-junk-removal-service-today" className="text-teal-700 font-semibold hover:underline">book your junk removal online</Link>. Click any state below for full city listings.</p>
+
+          <ValuationHint className="mx-auto mt-6 max-w-3xl" />
 
           <div className="mt-10 space-y-4">
             {OFFICES.map((office) => {
@@ -91,7 +94,7 @@ export default function LocationsPage() {
           <h2 className="text-center text-3xl font-bold text-slate-900 font-heading">
             Browse Cities by State
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">Select your state to see every city we serve with <Link href="/services" className="text-teal-700 font-semibold hover:underline">full-service junk removal</Link>. Each location offers the same <Link href="/pricing" className="text-teal-700 font-semibold hover:underline">starting at $100/hr pricing with resale credits</Link>, and you can <Link href="/contact-we-pay-you-junk-removal-today" className="text-teal-700 font-semibold hover:underline">contact us</Link> if you do not see your area listed.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">Select your state to see every city we serve with <Link href="/services" className="text-teal-700 font-semibold hover:underline">full-service junk removal</Link>. Each location offers the same <Link href="/pricing" className="text-teal-700 font-semibold hover:underline">$200/hr per man pricing with resale credits</Link>, and you can <Link href="/contact-we-pay-you-junk-removal-today" className="text-teal-700 font-semibold hover:underline">contact us</Link> if you do not see your area listed.</p>
           <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {STATES.map((state) => (
               <Link

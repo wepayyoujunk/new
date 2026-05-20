@@ -1,5 +1,6 @@
 import { PHONE, PHONE_HREF, EMAIL, HOURS } from "@/data/content";
 import { BookingForm } from "@/components/BookingForm";
+import { ValuationHint } from "@/components/ValuationHint";
 
 export default function BookPage() {
   return (
@@ -7,7 +8,7 @@ export default function BookPage() {
       <section className="relative overflow-hidden bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 pt-36 pb-16 sm:pt-44 sm:pb-24">
         <div className="absolute inset-0 grid-bg opacity-30" />
         <div className="relative mx-auto max-w-5xl px-6 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-200 font-cta">starting at $100/hr &bull; 1 Hour Minimum &bull; Dump Fees Included</p>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-teal-200 font-cta">$200/hr Per Man &bull; 1 Hour Minimum &bull; Dump Fees Included</p>
           <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl font-heading">
             Book Your <span className="gradient-text">Junk Removal</span> Today
           </h1>
@@ -26,9 +27,9 @@ export default function BookPage() {
               <div className="mt-6 space-y-6">
                 {[
                   { step: "1", title: "Fill Out the Form", desc: "Tell us your name, number, and what you need removed. Takes 60 seconds." },
-                  { step: "2", title: "We Call You", desc: "Our team calls to confirm pricing, 1 hour minimum, and schedule your pickup." },
-                  { step: "3", title: "We Show Up", desc: "Our crew arrives, loads your items, and appraises anything with resale value on the spot." },
-                  { step: "4", title: "You Pay Less or Get Paid", desc: "50% Resale Credit (when applicable)s reduce your bill. If credits exceed the bill, we pay you the difference." },
+                  { step: "2", title: "We Call With Your Estimate", desc: "Hours and labor only — that's the full quote. Item valuation is the next step, at pickup." },
+                  { step: "3", title: "We Show Up & Value Your Items", desc: "Our crew loads your items and appraises anything with fair resale value on the spot. You see every appraisal before it's credited." },
+                  { step: "4", title: "You Pay Less or Get Paid", desc: "50% of fair resale value comes off your estimate. If credits exceed the bill, we cut you a check on the spot." },
                 ].map((item) => (
                   <div key={item.step} className="flex gap-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-600 text-base font-bold text-white">{item.step}</div>
@@ -59,6 +60,7 @@ export default function BookPage() {
             {/* Right — booking form */}
             <div>
               <BookingForm />
+              <ValuationHint className="mt-4" />
             </div>
           </div>
         </div>

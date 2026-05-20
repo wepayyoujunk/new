@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CtaButtons } from "@/components/CtaButtons";
 import { PricingCalculator } from "@/components/PricingCalculator";
+import { ValuationHint } from "@/components/ValuationHint";
 import {
   PHONE,
   PHONE_HREF,
@@ -31,12 +32,12 @@ export default function HomePage() {
             Nationwide Junk Removal Service
           </p>
           <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl font-heading">
-            <span className="gradient-text">Starting at $100/hr</span>
+            <span className="gradient-text">$200/hr Per Man</span>
             <br />
             Junk Removal That Pays You Back
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
-            We Come to You — We Pay You for Your Stuff. Our crew loads, hauls, and disposes of your junk starting at $100/hr — dump fees included (an industry first). Items with resale value? We credit you 50% (when applicable) toward your bill. If credits exceed the total, we cut you a check.
+            We Come to You — We Pay You for Your Stuff. Our crew loads, hauls, and disposes of your junk at $200/hr per man — dump fees included (an industry first). Items with resale value? We credit you 50% (when applicable) toward your bill. If credits exceed the total, we cut you a check.
           </p>
 
           {/* Trust stat cards */}
@@ -52,8 +53,8 @@ export default function HomePage() {
               <p className="mt-1 text-xs text-white/50">Real customers, real results</p>
             </div>
             <div className="rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur text-center">
-              <p className="text-3xl font-bold text-white font-heading">From $100</p>
-              <p className="mt-1 text-sm font-semibold text-teal-200 font-cta">Dump Fees Included</p>
+              <p className="text-3xl font-bold text-white font-heading">$200/hr</p>
+              <p className="mt-1 text-sm font-semibold text-teal-200 font-cta">Per Man — Dump Fees In</p>
               <p className="mt-1 text-xs text-white/50">An industry first — no add-ons</p>
             </div>
             <div className="rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur text-center">
@@ -88,6 +89,7 @@ export default function HomePage() {
       <section className="bg-section-white py-12 sm:py-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
           <PricingCalculator />
+          <ValuationHint className="mt-4" />
         </div>
       </section>
 
@@ -109,10 +111,10 @@ export default function HomePage() {
           </p>
           <div className="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-slate-700">
             <p>
-              Here&apos;s what the junk removal industry doesn&apos;t want you to know: <strong>every junk company in America has been charging you for the service AND keeping 35%+ of your items to resell for their own profit.</strong> They pull up, charge you $400-$800, haul your stuff away, then cherry-pick the working appliances, quality furniture, electronics, and tools — and sell it all for hundreds or thousands of dollars. You paid them to take it. They made money twice. This isn&apos;t an accident — it&apos;s the business model, and it&apos;s been the industry standard for decades.
+              Here&apos;s what the junk removal industry doesn&apos;t want you to know: <strong>every junk company in America has been keeping 35%+ of your items to resell for their own profit.</strong> They haul your stuff away, then cherry-pick the working appliances, quality furniture, electronics, and tools — and sell it all for hundreds or thousands of dollars. You paid them to take it. They made money twice. This isn&apos;t an accident — it&apos;s the business model, and it&apos;s been the industry standard for decades.
             </p>
             <p>
-              We Pay You Junk Removal works differently. We charge a flat $100 per hour with a one-hour minimum. Dump fees are baked into the price — no surprise charges at the end. Our crew shows up, loads your items onto the truck, and hauls everything to the appropriate facility. Simple so far. Here is where it gets interesting.
+              We Pay You Junk Removal works differently. We charge a flat $200 per hour per man with a one-hour minimum. Dump fees are baked into the price — no surprise charges at the end. Our crew shows up, loads your items onto the truck, and hauls everything to the appropriate facility. Simple so far. Here is where it gets interesting.
             </p>
             <p>
               As we load your stuff, our crew identifies items with resale value — furniture in good shape, working appliances, electronics, tools, fitness equipment, musical instruments, designer goods, anything with a real secondary market. We appraise each item at fair market value right in front of you and credit 50% of that amount toward your bill. You see every appraisal, approve every credit, and watch your bill shrink in real time.
@@ -144,94 +146,88 @@ export default function HomePage() {
             Real Jobs, Real Math, Real Savings
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
-            See how our <Link href="/pricing" className="text-teal-600 underline">starting at $100/hr pricing</Link> combined with{" "}
-            <Link href="/about" className="text-teal-600 underline">50% Resale Credit (when applicable)s</Link> saves customers hundreds —
-            or puts money back in their pocket. <Link href="/book-junk-removal-service-today" className="text-teal-600 underline">Book your job today</Link>.
+            See how our <Link href="/pricing" className="text-teal-600 underline">$200/hr per man pricing</Link> combined with{" "}
+            <Link href="/about" className="text-teal-600 underline">50% Resale Credit (when applicable)s</Link> works on real jobs. <Link href="/book-junk-removal-service-today" className="text-teal-600 underline">Book your job today</Link>.
           </p>
           <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
             {[
               {
                 title: "Garage Cleanout",
                 location: "Austin, TX",
-                crew: "1 Person",
+                crew: "1 Man",
                 hours: "2 hrs",
-                cost: "$200",
+                cost: "$400",
                 items: [
                   { name: "Workbench", resale: "$120", credit: "$60" },
                   { name: "Power tools", resale: "$180", credit: "$90" },
                   { name: "Bikes", resale: "$60", credit: "$30" },
                 ],
                 totalCredits: "$180",
-                result: "You pay: $20",
+                result: "You pay: $220",
                 payout: false,
-                compare: "Other companies quoted $450 for the same job",
               },
               {
                 title: "Estate Cleanout",
                 location: "Brooklyn, NY",
-                crew: "2 Person",
+                crew: "2 Men",
                 hours: "4 hrs",
-                cost: "$1,000",
+                cost: "$1,600",
                 items: [
                   { name: "Furniture sets", resale: "$1,800", credit: "$900" },
                   { name: "Appliances", resale: "$600", credit: "$300" },
                   { name: "Electronics & tools", resale: "$1,100", credit: "$550" },
                 ],
                 totalCredits: "$1,750",
-                result: "We pay you: $750",
+                result: "We pay you: $150",
                 payout: true,
-                compare: "Other companies quoted $3,500+ and kept all resale value",
               },
               {
                 title: "Office Cleanout",
                 location: "Chicago, IL",
-                crew: "2 Person",
+                crew: "2 Men",
                 hours: "6 hrs",
-                cost: "$1,500",
+                cost: "$2,400",
                 items: [
                   { name: "30 Herman Miller chairs", resale: "$9,000", credit: "$4,500" },
                   { name: "15 standing desks", resale: "$3,000", credit: "$1,500" },
                   { name: "30 monitors & IT", resale: "$2,400", credit: "$1,200" },
                 ],
                 totalCredits: "$7,200",
-                result: "We pay you: $5,700",
+                result: "We pay you: $4,800",
                 payout: true,
-                compare: "Other companies quoted $4,000+ and would have resold everything",
               },
               {
                 title: "Furniture Removal",
                 location: "Denver, CO",
-                crew: "1 Person",
+                crew: "1 Man",
                 hours: "1 hr",
-                cost: "$100",
+                cost: "$200",
                 items: [
                   { name: "Leather sectional", resale: "$800", credit: "$400" },
                   { name: "Dining table", resale: "$300", credit: "$150" },
                 ],
                 totalCredits: "$550",
-                result: "We pay you: $450",
+                result: "We pay you: $350",
                 payout: true,
-                compare: "Customer was going to pay $200 to have it hauled by a competitor",
               },
               {
                 title: "Construction Debris",
                 location: "Phoenix, AZ",
-                crew: "2 Person",
+                crew: "2 Men",
                 hours: "3 hrs",
-                cost: "$750",
+                cost: "$1,200",
                 items: [
                   { name: "Scrap copper pipe", resale: "$240", credit: "$120" },
                   { name: "Solid wood cabinets", resale: "$160", credit: "$80" },
                 ],
                 totalCredits: "$200",
-                result: "You pay: $550",
+                result: "You pay: $1,000",
                 payout: false,
-                compare: "Dumpster rental would have cost $600+ with weight overage fees",
               },
               {
-                title: "Emergency Same-Day",
+                title: "Same-Day Pickup",
                 location: "Miami, FL",
-                crew: "2 Person Emergency",
+                crew: "2 Men",
                 hours: "2 hrs",
                 cost: "$800",
                 items: [
@@ -241,7 +237,6 @@ export default function HomePage() {
                 totalCredits: "$350",
                 result: "You pay: $450",
                 payout: false,
-                compare: "Move-out deadline next morning — crew arrived within 90 minutes",
               },
             ].map((ex) => (
               <div key={ex.title} className={`rounded-xl border ${ex.payout ? "border-accent" : "border-slate-200"} bg-white p-6`}>
@@ -269,7 +264,6 @@ export default function HomePage() {
                     <span>{ex.result.split(": ")[1]}</span>
                   </div>
                 </div>
-                <p className="mt-3 text-xs text-slate-400">{ex.compare}</p>
               </div>
             ))}
           </div>
@@ -299,7 +293,7 @@ export default function HomePage() {
           </p>
           <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: "Simple Pricing", desc: "rates starting at $100/hr — dump fees included (an industry first). No volume charges, no hidden fees, no surprises. You know exactly what you pay before we start." },
+              { title: "Simple Pricing", desc: "$200/hr per man flat rate — dump fees included (an industry first). No volume charges, no hidden fees, no surprises. You know exactly what you pay before we start." },
               { title: "50% Resale Credit (when applicable)", desc: "Every item with resale value earns you a 50% credit toward your bill. Furniture, appliances, electronics, tools — it all counts." },
               { title: "You Can Get Paid", desc: "If your credits exceed the bill, we write you a check. Estate cleanouts and office jobs regularly result in a payout to the customer." },
               { title: "Same-Day Service", desc: "Call before noon and we can usually have a crew at your door within 2-4 hours. Available 7 days a week, including holidays." },
@@ -329,7 +323,7 @@ export default function HomePage() {
             <Link href="/services/furniture-removal" className="text-teal-600 underline">furniture removal</Link> to{" "}
             <Link href="/services/construction-debris-removal" className="text-teal-600 underline">construction debris</Link> and{" "}
             <Link href="/commercial" className="text-teal-600 underline">commercial cleanouts</Link> — we handle it all at{" "}
-            <Link href="/pricing" className="text-teal-600 underline">starting at $100/hr</Link>.
+            <Link href="/pricing" className="text-teal-600 underline">$200/hr per man</Link>.
           </p>
           <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.slice(0, 12).map((service, i) => (
@@ -425,44 +419,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 6. US VS OTHER COMPANIES ─── */}
-      <section className="bg-section-teal py-16">
-        <div className="mx-auto max-w-5xl px-6">
-          <p className="text-center text-sm font-semibold uppercase tracking-widest text-teal-600 font-cta">
-            Cheapest Junk Removal Company Comparison
-          </p>
-          <h2 className="mt-3 text-center text-3xl font-bold text-slate-900 font-heading">
-            We Pay You Junk vs. Every Other Junk Removal Company
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
-            Compare our <Link href="/pricing" className="text-teal-600 underline">rates starting at $100/hr</Link> to volume-based pricing from other companies.
-            See real math on <Link href="/services/estate-cleanouts" className="text-teal-600 underline">estate cleanouts</Link>,{" "}
-            <Link href="/services/garage-cleanouts" className="text-teal-600 underline">garage cleanouts</Link>, and{" "}
-            <Link href="/services/office-cleanouts" className="text-teal-600 underline">office cleanouts</Link> that proves the difference.
-          </p>
-          <div className="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-slate-700">
-            <p>
-              The junk removal industry has a pricing problem. Most companies charge by the volume of space your stuff takes up on their truck. A quarter-truck load might be $250, a half truck $400, a full truck $600 or more. The problem is not just the price — it is the incentive structure. Volume pricing incentivizes the company to cram as much as possible onto one truck, estimate high, and move fast. It also means they profit twice: once from the fee you pay, and again from reselling your valuable items.
-            </p>
-            <p>
-              Our model eliminates both problems. Hourly pricing means we only charge for the time we actually work. If the job takes 90 minutes, you pay for 90 minutes starting at $100/hr — that is $150. A volume-based company would charge you $350-$500 for the same load. And because our business model depends on resale revenue, we have a direct financial incentive to identify and properly handle valuable items. We split that value with you 50/50 instead of keeping it all.
-            </p>
-            <p>
-              Consider a real scenario. You have a garage full of stuff — old workbench, some power tools, a lawn mower, three bikes, a dozen boxes of random items, and general clutter. A volume-based company quotes you $450 for a full truck. Our crew clears it in 2 hours ($200), identifies $360 in resale value from the tools, workbench, and bikes, credits you $180, and your final bill is $20. That is not a hypothetical — it is a real customer story from Austin, Texas.
-            </p>
-            <p>
-              The gap gets wider on larger jobs. <Link href="/services/estate-cleanouts" className="text-teal-600 underline">Estate cleanouts</Link> with other companies run $2,000-$5,000+ depending on the size of the home. With us, the same estate might take 8-12 hours ($800-$1,200) with $1,500-$3,000 in resale credits from furniture, appliances, electronics, and collectibles. Customers frequently walk away with a check instead of a bill. No other junk company in the country offers this.
-            </p>
-            <p>
-              <strong>Why don&apos;t other companies do this?</strong> Because sharing resale value with customers cuts into margins that they have kept for decades. 1-800-GOT-JUNK, Junk King, College Hunks Hauling Junk, LoadUp — they all use the same volume-based model with zero resale sharing. They charge you $400 to take a working refrigerator worth $500, then sell it and pocket every dollar. Their model depends on keeping you in the dark about what your stuff is actually worth. Our model depends on showing you — right there in your driveway, with comparable sales data, transparent appraisals, and your approval on every credit. The truth is that sharing resale value with customers builds trust, generates referrals, and creates a better business. They just haven&apos;t figured that out yet — or they have, and they would rather keep the money. Either way, you have a choice now. See our full <Link href="/pricing" className="text-teal-600 underline">pricing comparison</Link>.
-            </p>
-            <p>
-              <strong>The DIY trap:</strong> Some people think doing it themselves is cheaper. Rent a truck ($50-$150), drive to the dump ($10-$30 in gas), pay dump fees ($30-$100+ per load), and spend an entire Saturday loading, driving, unloading, and repeating. Total real cost: $200-$500 including your time — plus zero resale credit because everything goes in the landfill. Your working <Link href="/services/appliance-removal" className="text-teal-600 underline">appliances</Link>, quality <Link href="/services/furniture-removal" className="text-teal-600 underline">furniture</Link>, and valuable <Link href="/services/exercise-equipment-removal" className="text-teal-600 underline">exercise equipment</Link> get buried instead of resold. With us, those same items generate credits that often pay for the entire removal. Read our <Link href="/blog/diy-vs-professional-junk-removal" className="text-teal-600 underline">DIY vs professional comparison</Link> for the full breakdown.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ─── 8. TOP CITIES ─── */}
       <section className="bg-section-teal py-16">
         <div className="mx-auto max-w-5xl px-6">
@@ -516,24 +472,21 @@ export default function HomePage() {
       <section className="bg-section-white py-16">
         <div className="mx-auto max-w-5xl px-6">
           <p className="text-center text-sm font-semibold uppercase tracking-widest text-teal-600 font-cta">
-            Junk Removal Pricing — Three Options, One Simple Model
+            Junk Removal Pricing — One Flat Rate
           </p>
           <h2 className="mt-3 text-center text-3xl font-bold text-slate-900 font-heading">
-            Choose Your Crew — Starting at $100/hr
+            $200/hr Per Man, Dump Fees Included
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
-            Every option includes dump fees and 50% Resale Credit (when applicable). See our full{" "}
+            One rate, every day, every job. Dump fees baked in. 50% Resale Credit (when applicable). See our full{" "}
             <Link href="/pricing" className="text-teal-600 underline">pricing breakdown</Link>,{" "}
             <Link href="/faq" className="text-teal-600 underline">FAQ</Link>, and{" "}
             <Link href="/services" className="text-teal-600 underline">all 34 services</Link>.{" "}
             <Link href="/book-junk-removal-service-today" className="text-teal-600 underline">Book today</Link>.
           </p>
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-6 max-w-md mx-auto">
             {Object.entries(PRICING).map(([key, tier]) => (
-              <div key={key} className={`rounded-xl border bg-white p-6 text-center transition-all h-full ${"popular" in tier && tier.popular ? "border-accent shadow-lg relative" : "border-slate-200 hover:border-teal-400 hover:shadow-md"}`}>
-                {"popular" in tier && tier.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-0.5 text-xs font-bold text-white">MOST POPULAR</div>
-                )}
+              <div key={key} className="rounded-xl border-2 border-accent bg-white p-6 text-center shadow-lg">
                 <h3 className="text-lg font-bold text-slate-900 font-heading">{tier.label}</h3>
                 <p className="mt-2 text-5xl font-bold text-teal-700 font-heading">{tier.price}</p>
                 <p className="mt-1 text-sm text-slate-500">{tier.unit}</p>
@@ -545,7 +498,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/book-junk-removal-service-today" className={`mt-6 inline-block w-full rounded-lg py-3 text-center text-sm font-semibold transition-colors font-cta ${"popular" in tier && tier.popular ? "bg-accent text-white hover:bg-accent-dark" : "bg-teal-700 text-white hover:bg-teal-800"}`}>
+                <Link href="/book-junk-removal-service-today" className="mt-6 inline-block w-full rounded-lg bg-accent py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-accent-dark font-cta">
                   Book Now &amp; Save $10
                 </Link>
               </div>
@@ -564,8 +517,8 @@ export default function HomePage() {
             {RATING} Stars Across {REVIEW_COUNT} Reviews
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
-            Real customers, real results. Read how our <Link href="/pricing" className="text-teal-600 underline">starting at $100/hr pricing</Link> and{" "}
-            <Link href="/about" className="text-teal-600 underline">resale credit model</Link> save people hundreds.{" "}
+            Real customers, real results. Read how our <Link href="/pricing" className="text-teal-600 underline">$200/hr per man pricing</Link> and{" "}
+            <Link href="/about" className="text-teal-600 underline">resale credit model</Link> save people money.{" "}
             <Link href="/book-junk-removal-service-today" className="text-teal-600 underline">Schedule your pickup</Link> and see for yourself.
           </p>
           <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -687,37 +640,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 14. COMPETITOR COMPARISON ─── */}
-      <section className="bg-section-teal py-16">
-        <div className="mx-auto max-w-5xl px-6">
-          <p className="text-center text-sm font-semibold uppercase tracking-widest text-teal-600 font-cta">
-            We Pay You Junk vs 1-800-GOT-JUNK vs College Hunks
-          </p>
-          <h2 className="mt-3 text-center text-3xl font-bold text-slate-900 font-heading">
-            How We Compare to National Junk Removal Brands
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
-            See how our <Link href="/pricing" className="text-teal-600 underline">hourly pricing</Link> stacks up against volume-based companies.
-            Spoiler: nobody else <Link href="/about" className="text-teal-600 underline">pays you for your stuff</Link>.{" "}
-            <Link href="/contact-we-pay-you-junk-removal-today" className="text-teal-600 underline">Contact us</Link> for a free estimate.
-          </p>
-          <div className="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-slate-700">
-            <p>
-              1-800-GOT-JUNK is the biggest name in junk removal. They charge by volume — a full truck runs $600-$800+ depending on your market. They send a crew, load everything, and haul it away. Any items with resale value? They sell them and keep the money. You do not see a dime of it. Their model is simple: charge the customer as much as possible to haul items that the company then profits from reselling.
-            </p>
-            <p>
-              College Hunks Hauling Junk uses a similar volume model with pricing that starts lower but climbs fast for larger loads. They also resell items and keep 100% of the profit. Their branding is fun, but the economics are the same — you pay to give them inventory.
-            </p>
-            <p>
-              LoadUp, Junk King, and other regional competitors all follow the same pattern: volume pricing, no transparency on what happens to your items, and zero credit for anything with value. Some offer donation receipts for tax purposes, which is a nice touch, but it is not cash back on your bill.
-            </p>
-            <p>
-              We Pay You Junk Removal is the only national junk removal company that charges by the hour, includes dump fees in the rate, and credits you 50% of resale value (when applicable) on items worth something. Our crew is not incentivized to upsell you or estimate high — they are paid by the hour regardless of what is on the truck. The only financial incentive in our model beyond labor is resale, and we split that with you. There is no other company doing this at scale in the United States. Not one.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ─── 15. FULL SERVICE FOR EVERY SITUATION ─── */}
       <section className="bg-section-white py-16">
         <div className="mx-auto max-w-5xl px-6">
@@ -751,7 +673,7 @@ export default function HomePage() {
               <strong>Construction &amp; Yard:</strong> <Link href="/services/construction-debris-removal" className="text-teal-600 underline">Construction debris</Link>, <Link href="/services/renovation-waste-removal" className="text-teal-600 underline">renovation waste</Link>, <Link href="/services/yard-waste-removal" className="text-teal-600 underline">yard waste</Link>, <Link href="/services/carpet-flooring-removal" className="text-teal-600 underline">carpet and flooring</Link>, and <Link href="/services/scrap-metal-removal" className="text-teal-600 underline">scrap metal</Link> — all hauled at our hourly rate with dump fees included. No dumpster rental needed.
             </p>
             <p>
-              <strong>Property Management:</strong> <Link href="/services/foreclosure-cleanouts" className="text-teal-600 underline">Foreclosure cleanouts</Link> and <Link href="/services/property-management-cleanouts" className="text-teal-600 underline">tenant turnovers</Link> are a recurring reality. We provide fast-turnaround cleanouts with consistent crew assignments, priority scheduling, and credits on valuable items left behind. <Link href="/careers" className="text-teal-600 underline">We&apos;re also hiring</Link> — $50/hr starting pay, <Link href="/apply-for-junk-removal-job" className="text-teal-600 underline">apply today</Link>.
+              <strong>Property Management:</strong> <Link href="/services/foreclosure-cleanouts" className="text-teal-600 underline">Foreclosure cleanouts</Link> and <Link href="/services/property-management-cleanouts" className="text-teal-600 underline">tenant turnovers</Link> are a recurring reality. We provide fast-turnaround cleanouts with consistent crew assignments, priority scheduling, and credits on valuable items left behind. <Link href="/careers" className="text-teal-600 underline">We&apos;re also hiring contractors</Link> — 1099 owner-operators with a truck or trailer, <Link href="/apply-for-junk-removal-job" className="text-teal-600 underline">apply today</Link>.
             </p>
           </div>
         </div>
@@ -899,16 +821,16 @@ export default function HomePage() {
             Common Pricing Questions — Straight Answers
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
-            No hidden fees, no estimates. Read about our <Link href="/pricing" className="text-teal-600 underline">rates starting at $100/hr</Link>,{" "}
+            No hidden fees, no estimates. Read about our <Link href="/pricing" className="text-teal-600 underline">$200/hr per man rate</Link>,{" "}
             <Link href="/faq" className="text-teal-600 underline">credit system FAQ</Link>, and how{" "}
             <Link href="/book-junk-removal-service-today" className="text-teal-600 underline">booking works</Link>.
           </p>
           <div className="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-slate-700">
             <p>
-              <strong>Is our pricing really all-inclusive?</strong> Yes. Our starting rate covers labor, truck, loading, hauling, and dump fees. There are no additional charges for heavy items, stairs, long carries, or disposal. The only cost is hours worked starting at $100/hr with a 1-hour minimum.
+              <strong>Is our pricing really all-inclusive?</strong> Yes. Our $200/hr per man rate covers labor, truck, loading, hauling, and dump fees. There are no additional charges for heavy items, stairs, long carries, or disposal. The only cost is hours worked, 1-hour minimum.
             </p>
             <p>
-              <strong>What if my job takes less than an hour?</strong> The minimum charge is 1 hour ($100). If our crew finishes in 40 minutes, you pay $100. Most single-item pickups and small loads take less than an hour, so the minimum applies. For larger jobs, we round to the nearest 15-minute increment.
+              <strong>What if my job takes less than an hour?</strong> The minimum charge is 1 hour ($200 for one man). If our crew finishes in 40 minutes, you pay the 1-hour minimum. For larger jobs, we round to the nearest 15-minute increment.
             </p>
             <p>
               <strong>Do resale credits really come off my bill?</strong> Absolutely. Every item our crew identifies with resale value gets appraised at fair market value in front of you. You see the item, the estimated value, and the credit amount. Credits are applied to your bill in real time. If credits exceed your bill, we pay you the difference on the spot.
@@ -917,13 +839,13 @@ export default function HomePage() {
               <strong>How do I pay?</strong> We accept credit cards, debit cards, checks, Venmo, Zelle, and CashApp. Payment or payout is processed at the end of the job, on site. No invoices, no delayed billing.
             </p>
             <p>
-              <strong>Are there extra charges for weekends or holidays?</strong> No. The rate is starting at $100/hr every single day — weekdays, weekends, and holidays. No overtime charges, no surcharges, no premium pricing. The same rate, 365 days a year.
+              <strong>Are there extra charges for weekends or holidays?</strong> No. The rate is $200/hr per man every single day — weekdays, weekends, and holidays. No overtime charges, no surcharges, no premium pricing. The same rate, 365 days a year.
             </p>
             <p>
               <strong>What if I disagree with an appraisal?</strong> Every appraisal is a conversation, not a take-it-or-leave-it number. Our crew shows you comparable sales data and explains their reasoning. If you have evidence of a higher value — a recent listing, an original receipt, a dealer quote — we adjust. We&apos;d rather give a slightly generous credit than have you feel shortchanged. Nothing is credited without your explicit approval. See our full <Link href="/faq" className="text-teal-600 underline">FAQ</Link> for more on how appraisals work.
             </p>
             <p>
-              <strong>What&apos;s the difference between your three pricing tiers?</strong> 1 Person Crew ($100/hr) handles small jobs and single items up to 150 lbs. 2 Person Crew ($250/hr) is our most popular — handles full cleanouts, heavy items up to 500 lbs, and includes up to 2 truck loads. Emergency Same-Day ($200/person/hr) guarantees arrival within 2 hours for last-minute deadlines. All three tiers include dump fees (an industry first) and 50% Resale Credit (when applicable). See our <Link href="/pricing" className="text-teal-600 underline">full pricing breakdown</Link> with estimated costs for all 34 services.
+              <strong>What about bigger jobs needing more than one man?</strong> Same rate per man. Two-man crew is $400/hr. Three-man crew is $600/hr. You pick the crew size based on what the job needs — and crew size determines speed, so larger crews finish faster.
             </p>
             <p>
               <strong>Do you offer discounts for large jobs?</strong> Our credit model IS the discount. The more items with resale value in your job, the more credits you earn — and on large jobs like <Link href="/services/estate-cleanouts" className="text-teal-600 underline">estate cleanouts</Link> and <Link href="/services/office-cleanouts" className="text-teal-600 underline">office clearing</Link>, credits frequently cover the entire bill. That&apos;s a better deal than any volume discount because the savings scale with the actual value of YOUR specific items, not an arbitrary percentage off a quoted price. Recurring commercial clients get priority scheduling and dedicated crews — <Link href="/contact-we-pay-you-junk-removal-today" className="text-teal-600 underline">contact us</Link> to set up an account.
@@ -1057,7 +979,7 @@ export default function HomePage() {
               <strong>Text:</strong> Text us at the same number. Send a quick description or photos of what you need hauled. We reply with a time estimate and available appointment slots. Great for people who prefer not to call.
             </p>
             <p>
-              <strong>Same-Day Service:</strong> Call or book before noon and we can typically have a crew at your door within 2-4 hours. Same-day availability depends on crew scheduling in your market, but we accommodate it in 80%+ of requests. No rush charges, no premium pricing — same starting rate. Need it even faster? Our emergency same-day tier ($200/person/hr) guarantees arrival within 2 hours — see <Link href="/pricing" className="text-teal-600 underline">all pricing tiers</Link>.
+              <strong>Same-Day Service:</strong> Call or book before noon and we can typically have a crew at your door within 2-4 hours. Same-day availability depends on crew scheduling in your market, but we accommodate it in 80%+ of requests. No rush charges, no premium pricing — same $200/hr per man rate, every day.
             </p>
             <p>
               <strong>What to expect on the day:</strong> Your crew arrives in a branded truck within a 2-hour window. They introduce themselves, do a walkthrough of the space with you, and confirm what is going and what is staying. Then they get to work — loading items, sorting valuables for appraisal, and hauling everything to the truck. As they load, they present appraisals on items with resale value. You approve or reject each credit individually. When loading is complete, they do a final sweep of the work area and a walkthrough with you to confirm the space is clean. Payment or payout is processed on site — credit card, check, Venmo, Zelle, or CashApp. The entire process — from their arrival to a clean space — typically takes 1-4 hours for residential jobs. <Link href="/services/estate-cleanouts" className="text-teal-600 underline">Estate cleanouts</Link> and <Link href="/services/office-cleanouts" className="text-teal-600 underline">commercial jobs</Link> may take longer.
@@ -1098,7 +1020,7 @@ export default function HomePage() {
               <strong>What &quot;local&quot; actually means:</strong> Our crew in Nashville is not the same crew that works Denver. Your crew member lives in your metro area, shops at your stores, knows your traffic patterns, and understands which items sell best in your local resale market. A mid-century modern dresser commands a premium in Portland that it does not command in Dallas. A riding mower is worth more in suburban Atlanta than in downtown Chicago. A set of snow tires has value in Minneapolis but not in Miami. These market-specific dynamics affect your credit — and a local crew with local knowledge means more accurate appraisals and higher credits for you. That is something a national chain dispatching from a central call center can never replicate.
             </p>
             <p>
-              <strong>Growing every month:</strong> We are adding new cities and new office locations continuously. If you are in a city we don&apos;t currently serve, call us anyway — we may have a crew nearby that can reach you, we may be launching in your market next month, or we may be able to schedule a special trip. We also offer <Link href="/franchise" className="text-teal-600 underline">franchise opportunities</Link> for entrepreneurs who want to bring the We Pay You model to their community. And we&apos;re always <Link href="/careers" className="text-teal-600 underline">hiring crew members</Link> — $50/hr starting pay, full training, real growth path. <Link href="/apply-for-junk-removal-job" className="text-teal-600 underline">Apply today</Link>.
+              <strong>Growing every month:</strong> We are adding new cities and new office locations continuously. If you are in a city we don&apos;t currently serve, call us anyway — we may have a crew nearby that can reach you, we may be launching in your market next month, or we may be able to schedule a special trip. We also offer <Link href="/franchise" className="text-teal-600 underline">franchise opportunities</Link> for entrepreneurs who want to bring the We Pay You model to their community. And we&apos;re always <Link href="/careers" className="text-teal-600 underline">hiring 1099 contractors</Link> with a truck or trailer. <Link href="/apply-for-junk-removal-job" className="text-teal-600 underline">Apply today</Link>.
             </p>
           </div>
         </div>
@@ -1148,7 +1070,7 @@ export default function HomePage() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
             <Link href="/services/construction-debris-removal" className="text-teal-600 underline">Construction debris</Link>,{" "}
-            <Link href="/services/renovation-waste-removal" className="text-teal-600 underline">renovation waste</Link>, and jobsite cleanup — all starting at $100/hr.{" "}
+            <Link href="/services/renovation-waste-removal" className="text-teal-600 underline">renovation waste</Link>, and jobsite cleanup — all at $200/hr per man.{" "}
             <Link href="/contact-we-pay-you-junk-removal-today" className="text-teal-600 underline">Contact us</Link> for contractor scheduling.
           </p>
           <div className="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-slate-700">
@@ -1187,7 +1109,7 @@ export default function HomePage() {
           </p>
           <div className="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-slate-700">
             <p>
-              Every We Pay You Junk Removal crew member is background-checked, professionally trained, and covered by comprehensive liability insurance. We do not hire day laborers or subcontract to random trucks — our crews are our employees, trained in our methods, our safety protocols, and our customer service standards.
+              Every contractor in the We Pay You network is background-checked, vetted for vehicle and insurance, and trained in our appraisal and customer service protocols before they take their first job.
             </p>
             <p>
               <strong>Training:</strong> Crew members complete hands-on training in proper lifting techniques, stair carry protocols, furniture disassembly, appliance handling, and the use of professional moving equipment including dollies, hand trucks, furniture straps, moving blankets, and floor runners. Heavy items like pianos, safes, refrigerators, and cast iron tubs require specific techniques that our crews practice regularly.
@@ -1199,10 +1121,10 @@ export default function HomePage() {
               <strong>Licensing:</strong> We are fully licensed and bonded in every market we operate. All disposal is handled through licensed transfer stations and recycling facilities. E-waste goes to certified recyclers. Refrigerant is handled in compliance with EPA regulations. We maintain all required permits and certifications to operate legally and responsibly in every state.
             </p>
             <p>
-              <strong>Insurance:</strong> We carry general liability insurance with coverage limits that protect your property throughout the entire removal process. Commercial auto insurance covers all vehicles. Workers&apos; compensation covers all crew members. Professional liability insurance covers our appraisal services. For <Link href="/commercial" className="text-teal-600 underline">commercial clients</Link> and <Link href="/services/property-management-cleanouts" className="text-teal-600 underline">property managers</Link>, we provide certificates of insurance on request — emailed within 24 hours of your request via our <Link href="/contact-we-pay-you-junk-removal-today" className="text-teal-600 underline">contact page</Link>.
+              <strong>Insurance:</strong> We carry general liability insurance with coverage limits that protect your property throughout the entire removal process. Every contractor in the network carries their own commercial auto and vehicle insurance, verified before they take their first job. Professional liability insurance covers our appraisal services. For <Link href="/commercial" className="text-teal-600 underline">commercial clients</Link> and <Link href="/services/property-management-cleanouts" className="text-teal-600 underline">property managers</Link>, we provide certificates of insurance on request — emailed within 24 hours of your request via our <Link href="/contact-we-pay-you-junk-removal-today" className="text-teal-600 underline">contact page</Link>.
             </p>
             <p>
-              <strong>Our People:</strong> We hire people who care about doing good work — and we invest in keeping them. Starting pay is $50/hr for crew members (see our <Link href="/careers" className="text-teal-600 underline">open positions</Link> or <Link href="/apply-for-junk-removal-job" className="text-teal-600 underline">apply today</Link>). Full-time crew members receive health insurance, PTO, and 401k. We promote from within — crew member to team lead ($60/hr) to operations manager. Low turnover means consistent, experienced crews showing up at your door. When you see the same faces on repeat jobs, you know they know what they&apos;re doing.
+              <strong>Our People:</strong> Our contractors are independent owner-operators with their own trucks or trailers, paid $100/hr per man plus a share of resale value on items they bring in. They&apos;re vetted, background-checked, and trained — and because they own their equipment and their schedules, they care about every job. See our <Link href="/careers" className="text-teal-600 underline">open positions</Link> or <Link href="/apply-for-junk-removal-job" className="text-teal-600 underline">apply today</Link>.
             </p>
             <p>
               <strong>Customer Satisfaction:</strong> We maintain a {RATING}-star rating across {REVIEW_COUNT} reviews. Over 40% of our jobs come from repeat customers and referrals. We back every job with a satisfaction guarantee — if anything isn&apos;t right, we make it right on the spot. No arguing, no follow-up calls, no runaround. Our crew will address the issue before they leave your property. That&apos;s the standard at We Pay You Junk Removal, and it&apos;s why people keep calling us back. Read what our customers say or check our <Link href="/blog" className="text-teal-600 underline">blog</Link> for junk removal tips and guides.
@@ -1219,7 +1141,7 @@ export default function HomePage() {
             Ready to Get Paid for Your Junk?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
-            Rates starting at $100/hr with dump fees included (an industry first). 50% Resale Credit (when applicable) on every item with value — furniture, appliances, electronics, tools, and more. {CITY_COUNT} cities across all {STATE_COUNT} states. Open {HOURS}, seven days a week, including weekends and holidays. Same-day service available for calls placed before noon. No contracts, no hidden fees, no minimum truck loads. Your stuff has value — stop giving it away to companies that profit from it without sharing. Text, call, or book online right now and see the difference.
+            $200/hr per man with dump fees included (an industry first). 50% Resale Credit (when applicable) on every item with value — furniture, appliances, electronics, tools, and more. {CITY_COUNT} cities across all {STATE_COUNT} states. Open {HOURS}, seven days a week, including weekends and holidays. Same-day service available for calls placed before noon. No contracts, no hidden fees, no minimum truck loads. Your stuff has value — stop giving it away to companies that profit from it without sharing.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a href={SMS_HREF}>

@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   if (!ct || !result) return {};
   return {
     title: `Junk Removal for ${ct.name} in ${result.city.name}, ${result.state.abbreviation}`,
-    description: `${ct.name} junk removal in ${result.city.name}, ${result.state.abbreviation}. ${ct.description} Starting at $100/hr.`,
+    description: `${ct.name} junk removal in ${result.city.name}, ${result.state.abbreviation}. ${ct.description} $200/hr per man.`,
     alternates: { canonical: `/who-we-serve/${type}/${stateSlug}/${citySlug}` },
   };
 }

@@ -18,6 +18,8 @@ interface LeadPayload {
   when?: string;
   details?: string;
   hasLicense?: string;
+  hasInsurance?: string;
+  vehicle?: string;
   canLift?: string;
   availability?: string;
   about?: string;
@@ -42,6 +44,8 @@ async function saveToSupabase(payload: LeadPayload) {
     when_needed: payload.when ?? null,
     details: payload.details ?? null,
     has_license: payload.hasLicense ?? null,
+    has_insurance: payload.hasInsurance ?? null,
+    vehicle: payload.vehicle ?? null,
     can_lift: payload.canLift ?? null,
     availability: payload.availability ?? null,
     about: payload.about ?? null,

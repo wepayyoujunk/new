@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaButtons } from "@/components/CtaButtons";
+import { ValuationHint } from "@/components/ValuationHint";
 import { PHONE, PHONE_HREF, SMS_HREF } from "@/data/content";
 import { SERVICES } from "@/data/services";
 
@@ -48,6 +49,7 @@ export default function CommercialPage() {
           <p className="text-sm font-semibold uppercase tracking-widest text-teal-600 font-cta text-center">Affordable Commercial Junk Hauling With Resale Credit</p>
           <h2 className="text-center text-3xl font-bold text-slate-900 font-heading">Why Businesses Choose Us</h2>
           <p className="mt-4 text-base text-slate-600 text-center mx-auto max-w-2xl">We serve <Link href="/services/hotel-cleanouts" className="text-teal-700 underline hover:text-teal-900">hotels</Link>, <Link href="/services/property-management-cleanouts" className="text-teal-700 underline hover:text-teal-900">property managers</Link>, and offices across every borough. Check our <Link href="/pricing" className="text-teal-700 underline hover:text-teal-900">transparent pricing</Link> or find a <Link href="/locations" className="text-teal-700 underline hover:text-teal-900">service area near you</Link> to see why commercial clients keep coming back.</p>
+          <ValuationHint className="mx-auto mt-6 max-w-3xl" />
           <div className="mt-8 space-y-5 text-base leading-relaxed text-slate-700">
             <p>Commercial junk removal is where our credit model delivers the biggest savings. Office furniture and electronics have some of the strongest resale markets in the country. Herman Miller chairs, Steelcase desks, commercial monitors, server equipment, industrial kitchen gear — these items hold significant value that traditional junk companies pocket for themselves. With us, you get 50% of that value credited to your bill.</p>
             <p>We've cleared offices of every size — from 5-person startups to 500-seat corporate floors. We've emptied retail stores, warehouses, hotels, schools, and churches. On nearly every commercial job, the resale credits from furniture and equipment cover a significant portion of the bill. Large office cleanouts with high-quality furniture regularly result in payouts to the business — where our credits exceed the removal cost and we cut a check.</p>

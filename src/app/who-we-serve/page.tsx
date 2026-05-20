@@ -3,10 +3,11 @@ import Link from "next/link";
 import { CITY_COUNT, STATE_COUNT } from "@/data/content";
 import { CUSTOMER_TYPES } from "@/data/customer-types";
 import { CtaButtons } from "@/components/CtaButtons";
+import { ValuationHint } from "@/components/ValuationHint";
 
 export const metadata: Metadata = {
   title: "Who We Serve — Junk Removal for Homeowners, Businesses, Property Managers & More",
-  description: `We serve 13 customer types across ${CITY_COUNT}+ cities. Homeowners, renters, property managers, realtors, businesses, estate managers, contractors, and more. Starting at $100/hr.`,
+  description: `We serve 13 customer types across ${CITY_COUNT}+ cities. Homeowners, renters, property managers, realtors, businesses, estate managers, contractors, and more. $200/hr per man.`,
   alternates: { canonical: "/who-we-serve" },
 };
 
@@ -34,6 +35,7 @@ export default function WhoWeServePage() {
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
             Click your category to see how our <Link href="/pricing" className="text-teal-700 font-semibold hover:underline">pricing</Link> and 50% Resale Credit (when applicable) work for your specific situation. Every type gets the same rate, the same credits, and the same <Link href="/services" className="text-teal-700 font-semibold hover:underline">34 services</Link> across <Link href="/locations" className="text-teal-700 font-semibold hover:underline">{CITY_COUNT}+ cities</Link>.
           </p>
+          <ValuationHint className="mx-auto mt-6 max-w-3xl" />
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {CUSTOMER_TYPES.map((ct) => (
               <Link key={ct.slug} href={`/who-we-serve/${ct.slug}`} className="group rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-teal-400 hover:shadow-md h-full flex flex-col">
@@ -56,7 +58,7 @@ export default function WhoWeServePage() {
         <div className="relative mx-auto max-w-5xl px-6 text-center">
           <p className="text-center text-sm font-semibold uppercase tracking-widest text-teal-200 font-cta">Same Rate for Every Customer Type</p>
           <h2 className="mt-3 text-center text-3xl font-bold text-white sm:text-4xl font-heading">Your Stuff Has Value — No Matter Who You Are</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-base text-white/70">Starting at $100/hr. Dump fees included (an industry first). 50% Resale Credit (when applicable). Same-day available.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-base text-white/70">$200/hr per man. Dump fees included (an industry first). 50% Resale Credit (when applicable). Same-day available.</p>
           <CtaButtons variant="dark" />
         </div>
       </section>

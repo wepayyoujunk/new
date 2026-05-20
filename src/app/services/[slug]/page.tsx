@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaButtons } from "@/components/CtaButtons";
+import { ValuationHint } from "@/components/ValuationHint";
 import { notFound } from "next/navigation";
 import { PHONE, PHONE_HREF, SMS_HREF, CITY_COUNT, STATE_COUNT } from "@/data/content";
 import { SERVICES, SERVICE_CATEGORIES, getExtendedContent } from "@/data/services";
@@ -66,6 +67,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="mt-8 space-y-5 text-base leading-relaxed text-slate-700">
             <p>{service.longDescription}</p>
           </div>
+          <ValuationHint className="mt-8" />
         </div>
       </section>
 
@@ -87,8 +89,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <h2 className="text-center text-3xl font-bold text-slate-900 font-heading">The Complete Guide to {service.title}</h2>
           <div className="mt-8 space-y-5 text-base leading-relaxed text-slate-700">
             <p>{service.title} is one of our most requested services nationwide, and it&apos;s a perfect example of why the We Pay You model works better than traditional junk removal. When you call a flat-rate company for {service.title.toLowerCase()}, they estimate the truck volume, charge you $200-$800+ depending on the load size, and haul everything away. Any items with resale value get resold for their own profit. You paid the removal fee and lost the resale value — a double hit to your wallet.</p>
-            <p>With our {service.title.toLowerCase()} service, the economics are completely different. You pay a transparent hourly rate — $100/hr for a 1-person crew, $250/hr for a 2-person crew, or $200/person/hr for emergency same-day. Dump fees, transfer station costs, and all disposal charges are included (an industry first). As our crew loads your items, they identify everything with resale value and appraise it at current fair market rates. You receive 50% of each item&apos;s appraised value (when applicable) as an immediate credit on your bill. If the total credits exceed the total bill, we pay you the difference.</p>
-            <p>The typical {service.title.toLowerCase()} customer uses our crew and the job takes 1.5-3 hours, putting the pre-credit cost at $225-$450. Resale credits typically range from $50-$300+ depending on the items involved, bringing the out-of-pocket cost to $100-$350 — significantly less than the $350-$700+ a flat-rate company would charge for the same job. On larger {service.title.toLowerCase()} projects with high-value items, credits frequently cover the entire bill or result in a payout.</p>
+            <p>With our {service.title.toLowerCase()} service, the economics are completely different. You pay a transparent hourly rate — $200/hr per man, with a 1 hour minimum. Dump fees, transfer station costs, and all disposal charges are included (an industry first). As our crew loads your items, they identify everything with resale value and appraise it at current fair market rates. You receive 50% of each item&apos;s appraised value (when applicable) as an immediate credit on your bill. If the total credits exceed the total bill, we pay you the difference.</p>
+            <p>The typical {service.title.toLowerCase()} customer uses a one or two-man crew and the job takes 1.5-3 hours. Resale credits typically range from $50-$300+ depending on the items involved, coming off the top of your bill at appraisal. On larger {service.title.toLowerCase()} projects with high-value items, credits frequently cover the entire bill or result in a payout.</p>
             <p>Our crews are specifically trained in {service.title.toLowerCase()} — they understand the particular challenges, safety considerations, and item categories involved. They carry the right equipment, know the most efficient techniques, and can handle everything from a quick single-item pickup to a large-scale multi-hour project. Same-day appointments are available when you call before noon, and we operate 7 days a week, 7AM-8PM.</p>
           </div>
         </div>

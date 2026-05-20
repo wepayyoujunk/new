@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaButtons } from "@/components/CtaButtons";
+import { ValuationHint } from "@/components/ValuationHint";
 import { notFound } from "next/navigation";
 import { PHONE, PHONE_HREF, SMS_HREF } from "@/data/content";
 import { STATES, getStateBySlug } from "@/data/cities";
@@ -40,13 +41,19 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             Junk Removal in <span className="gradient-text">{state.name}</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
-            Professional junk removal in {state.cities.length} cities across {state.abbreviation}. starting at $100/hr, dump fees included. 50% Resale Credit (when applicable) on valuable items.
+            Professional junk removal in {state.cities.length} cities across {state.abbreviation}. $200/hr per man, dump fees included. 50% Resale Credit (when applicable) on valuable items.
           </p>
           <CtaButtons variant="dark" />
         </div>
       </section>
 
       {office && <OfficeBlock office={office} />}
+
+      <section className="bg-section-white pt-8">
+        <div className="mx-auto max-w-3xl px-6">
+          <ValuationHint />
+        </div>
+      </section>
 
       {/* Long-form content sections */}
       {content.sections.map((section, i) => (

@@ -3,10 +3,11 @@ import Link from "next/link";
 import { PHONE, PHONE_HREF, SMS_HREF, CITY_COUNT, STATE_COUNT } from "@/data/content";
 import { SERVICES } from "@/data/services";
 import { CtaButtons } from "@/components/CtaButtons";
+import { ValuationHint } from "@/components/ValuationHint";
 
 export const metadata: Metadata = {
   title: "About We Pay You Junk Removal — The Only Junk Company That Pays You Back",
-  description: "We Pay You Junk Removal started with a radical idea: customers deserve a cut when their items have resale value. Starting at $100/hr, dump fees included, 50% Resale Credit (when applicable). 900+ cities, 50 states, 34 services.",
+  description: "We Pay You Junk Removal started with a radical idea: customers deserve a cut when their items have resale value. $200/hr per man, dump fees included, 50% Resale Credit (when applicable). 900+ cities, 50 states, 34 services.",
   alternates: { canonical: "/about" },
 };
 
@@ -55,7 +56,7 @@ export default function AboutPage() {
           </p>
           <div className="mx-auto mt-8 max-w-3xl space-y-5 text-center text-base leading-relaxed text-slate-700">
             <p><strong>Mission:</strong> To build the most honest junk removal company in America — one that charges a fair rate, includes dump fees, and shares resale value with the people whose items we haul. We believe your stuff has value and you deserve a cut.</p>
-            <p><strong>Transparency:</strong> No hidden fees. No surprise surcharges. No volume-based guessing games. Starting at $100/hr with a 1 hour minimum and dump fees included. You watch the clock. You see every appraisal. You approve every credit. Our <Link href="/pricing" className="text-teal-700 font-semibold hover:underline">pricing page</Link> tells you exactly what you&apos;ll pay — and we stick to it.</p>
+            <p><strong>Transparency:</strong> No hidden fees. No surprise surcharges. No volume-based guessing games. $200/hr per man with a 1 hour minimum and dump fees included. You watch the clock. You see every appraisal. You approve every credit. Our <Link href="/pricing" className="text-teal-700 font-semibold hover:underline">pricing page</Link> tells you exactly what you&apos;ll pay — and we stick to it.</p>
             <p><strong>Fairness:</strong> The 50% Resale Credit (when applicable) exists because we refuse to profit from your items without sharing the upside. Other companies keep 100% of resale revenue. We split it 50/50 because that&apos;s what&apos;s right. If your credits exceed your bill, we pay you the difference — same day, on the spot.</p>
             <p><strong>Environmental Responsibility:</strong> We divert 60% of what we haul from landfills. Items with value get resold. Items without resale value but in usable condition get donated. Materials like metal, cardboard, and electronics get recycled. Only truly unsalvageable waste goes to the dump — and even then, we pay the dump fees so you don&apos;t have to.</p>
             <p><strong>Respect:</strong> Your home is your space. Our crews show up on time, protect your floors and walls, communicate clearly, and leave the space cleaner than they found it. We treat every job — from a single <Link href="/services/furniture-removal" className="text-teal-700 font-semibold hover:underline">couch removal</Link> to a full <Link href="/commercial" className="text-teal-700 font-semibold hover:underline">commercial cleanout</Link> — with the same level of care.</p>
@@ -71,11 +72,12 @@ export default function AboutPage() {
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
             Six reasons We Pay You Junk Removal is not like any other junk company. See our full <Link href="/services" className="text-teal-700 font-semibold hover:underline">service list</Link>, read our <Link href="/faq" className="text-teal-700 font-semibold hover:underline">FAQ</Link>, or check <Link href="/pricing" className="text-teal-700 font-semibold hover:underline">pricing</Link> for details.
           </p>
+          <ValuationHint className="mx-auto mt-6 max-w-3xl" />
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-teal-400 hover:shadow-md text-center">
-              <p className="text-3xl font-bold text-teal-700 font-heading">$100/hr</p>
-              <h3 className="mt-2 text-lg font-bold text-slate-900 font-heading">Simple Hourly Rate</h3>
-              <p className="mt-2 text-sm text-slate-600">Starting at $100/hr with a 1 hour minimum. No volume estimates, no truck-fraction pricing, no hidden fees. Dump fees included — an industry first.</p>
+              <p className="text-3xl font-bold text-teal-700 font-heading">$200/hr</p>
+              <h3 className="mt-2 text-lg font-bold text-slate-900 font-heading">Flat Hourly Rate Per Man</h3>
+              <p className="mt-2 text-sm text-slate-600">$200/hr per man with a 1 hour minimum. No volume estimates, no truck-fraction pricing, no hidden fees. Dump fees included — an industry first.</p>
             </div>
             <div className="rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-teal-400 hover:shadow-md text-center">
               <p className="text-3xl font-bold text-teal-700 font-heading">50%</p>
@@ -112,12 +114,12 @@ export default function AboutPage() {
           <p className="text-center text-sm font-semibold uppercase tracking-widest text-teal-600 font-cta">The People Behind Every Job</p>
           <h2 className="mt-3 text-center text-3xl font-bold text-slate-900 font-heading">Our Team</h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate-600">
-            Every crew member is background-checked, fully insured, and trained in our appraisal system. Interested in joining? See our <Link href="/careers" className="text-teal-700 font-semibold hover:underline">careers page</Link> or learn about <Link href="/franchise" className="text-teal-700 font-semibold hover:underline">franchise opportunities</Link>. Questions? <Link href="/contact-we-pay-you-junk-removal-today" className="text-teal-700 font-semibold hover:underline">Contact us</Link>.
+            Every contractor in our network is background-checked, vetted for vehicle and insurance, and trained in our appraisal system. Interested in joining? See our <Link href="/careers" className="text-teal-700 font-semibold hover:underline">careers page</Link> or learn about <Link href="/franchise" className="text-teal-700 font-semibold hover:underline">franchise opportunities</Link>. Questions? <Link href="/contact-we-pay-you-junk-removal-today" className="text-teal-700 font-semibold hover:underline">Contact us</Link>.
           </p>
           <div className="mx-auto mt-8 max-w-3xl space-y-5 text-center text-base leading-relaxed text-slate-700">
-            <p>Our crews aren&apos;t just haulers — they&apos;re trained appraisers. Every team member goes through our proprietary valuation training program, learning to identify brands, assess condition, check comparable sales data, and determine fair market value on the spot. This is what makes the 50% Resale Credit (when applicable) possible: our crews know what your items are worth and they can prove it.</p>
-            <p>Every crew member passes a comprehensive background check before their first job. They&apos;re insured, bonded, and trained in proper lifting techniques, floor and wall protection, and respectful communication. When our crew walks into your home, you&apos;re getting professionals who treat your space like their own.</p>
-            <p>We hire locally in every market we serve. Your crew lives in your city, knows your neighborhood, and understands local resale values. That local knowledge means faster, more accurate appraisals — and bigger credits for you. It also means we&apos;re investing in your community with real jobs and real career paths.</p>
+            <p>Our network of independent contractors aren&apos;t just haulers — they&apos;re trained appraisers. Every contractor goes through our proprietary valuation training program before taking their first job, learning to identify brands, assess condition, check comparable sales data, and determine fair market value on the spot. This is what makes the 50% Resale Credit (when applicable) possible: our contractors know what your items are worth and they can prove it.</p>
+            <p>Every contractor passes a comprehensive background check before their first job, with verified driver&apos;s license, vehicle insurance, and a clean record. They&apos;re trained in proper lifting techniques, floor and wall protection, and respectful communication. When a We Pay You contractor walks into your home, you&apos;re getting a vetted professional who treats your space like their own.</p>
+            <p>We work with local owner-operators in every market we serve. Your contractor lives in your city, knows your neighborhood, and understands local resale values. That local knowledge means faster, more accurate appraisals — and bigger credits for you.</p>
           </div>
         </div>
       </section>
@@ -132,7 +134,7 @@ export default function AboutPage() {
           </p>
           <div className="mx-auto mt-8 max-w-3xl space-y-5 text-center text-base leading-relaxed text-slate-700">
             <p>We Pay You Junk Removal operates 50 regional offices across all {STATE_COUNT} states, serving {CITY_COUNT} cities and counting. Each office is staffed with local crews who know their market — the resale landscape, the donation partners, the recycling facilities, and the neighborhoods they serve. This isn&apos;t a franchise model with absentee operators. Every office is company-owned and held to the same standards.</p>
-            <p>Whether you&apos;re in New York, Los Angeles, Chicago, Houston, Phoenix, or a smaller market, the experience is the same: starting at $100/hr, dump fees included, 50% Resale Credit (when applicable), and a crew that shows up on time and does the job right. Our national scale means we can serve you anywhere — and our local presence means we understand your market.</p>
+            <p>Whether you&apos;re in New York, Los Angeles, Chicago, Houston, Phoenix, or a smaller market, the experience is the same: $200/hr per man, dump fees included, 50% Resale Credit (when applicable), and a crew that shows up on time and does the job right. Our national scale means we can serve you anywhere — and our local presence means we understand your market.</p>
             <p>Need junk removal in your area? <Link href="/locations" className="text-teal-700 font-semibold hover:underline">Browse all locations</Link> to find your city, or call <a href={PHONE_HREF} className="text-teal-700 font-semibold hover:underline">{PHONE}</a> to speak with a local coordinator who can get a crew to you — often the same day.</p>
           </div>
         </div>
@@ -144,7 +146,7 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-5xl px-6 text-center">
           <h2 className="text-3xl font-bold text-white sm:text-4xl font-heading">Ready to See What Your Junk Is Worth?</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
-            Starting at $100/hr. Dump fees included. 50% Resale Credit (when applicable). The only junk removal company that pays you back.
+            $200/hr per man. Dump fees included. 50% Resale Credit (when applicable). The only junk removal company that pays you back.
           </p>
           <CtaButtons variant="dark" />
         </div>
