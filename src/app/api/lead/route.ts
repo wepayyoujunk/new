@@ -58,7 +58,7 @@ async function saveToSupabase(payload: LeadPayload) {
 
 async function sendViaResend(payload: LeadPayload) {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.LEAD_TO_EMAIL || "thenyctowcompany@gmail.com";
+  const to = process.env.LEAD_TO_EMAIL || "wepayyoujunk@gmail.com";
   const from = process.env.LEAD_FROM_EMAIL || "leads@wepayyoujunkremoval.com";
 
   if (!apiKey) return { sent: false, reason: "RESEND_API_KEY not set" };
