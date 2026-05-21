@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaButtons } from "@/components/CtaButtons";
 import { CITY_COUNT, STATE_COUNT } from "@/data/content";
+import { JobPostingJsonLd } from "@/components/JobPostingJsonLd";
+
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Junk Removal Contractor Jobs — 1099 Owner-Operators With a Truck or Trailer | Paid in 30 Minutes",
@@ -12,6 +15,10 @@ export const metadata: Metadata = {
 export default function CareersPage() {
   return (
     <>
+      <JobPostingJsonLd
+        title="Junk Removal Contractor — 1099 Owner-Operator (Truck or Trailer Required)"
+        description="Run junk removal jobs as a 1099 contractor across 900+ US cities. $100/hr per man, paid within 30 minutes of job completion, plus 50% of items we resell. Pilot operators get first dibs on franchise territory."
+      />
       <section className="relative overflow-hidden bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 pt-36 pb-16 sm:pt-44 sm:pb-24">
         <div className="absolute inset-0 grid-bg opacity-30" />
         <div className="relative mx-auto max-w-5xl px-6 text-center">

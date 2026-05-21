@@ -6,6 +6,9 @@ import { getOfficeByState } from "@/data/offices";
 import { OfficeBlock } from "@/components/OfficeBlock";
 import { CtaButtons } from "@/components/CtaButtons";
 import { JobApplicationForm } from "@/components/JobApplicationForm";
+import { JobPostingJsonLd } from "@/components/JobPostingJsonLd";
+
+export const revalidate = 86400;
 
 export function generateStaticParams() {
   return STATES.map((s) => ({ state: s.slug }));
@@ -30,6 +33,11 @@ export default async function StateJobsPage({ params }: { params: Promise<{ stat
 
   return (
     <>
+      <JobPostingJsonLd
+        title={`Junk Removal Contractor — 1099 Owner-Operator in ${state.name} (Truck or Trailer Required)`}
+        description={`Run junk removal jobs in ${state.name} as a 1099 contractor across ${state.cities.length} ${state.abbreviation} cities. $100/hr per man, paid within 30 minutes of job completion, plus 50% of items we resell. Pilot operators get first dibs on franchise territory.`}
+        region={state.name}
+      />
       <section className="relative overflow-hidden bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 pt-36 pb-16 sm:pt-44 sm:pb-24">
         <div className="absolute inset-0 grid-bg opacity-30" />
         <div className="relative mx-auto max-w-5xl px-6 text-center">
