@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaButtons } from "@/components/CtaButtons";
-import { PHONE, PHONE_HREF, SMS_HREF, EMAIL, CITY_COUNT, STATE_COUNT } from "@/data/content";
+import { CITY_COUNT, STATE_COUNT } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "Junk Removal Contractor Jobs — 1099 Owner-Operators With a Truck or Trailer",
@@ -87,9 +87,9 @@ export default function CareersPage() {
         <div className="relative mx-auto max-w-5xl px-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-teal-200 font-cta">Apply for a Junk Removal Contractor Position</p>
           <h2 className="text-center text-3xl font-bold text-white sm:text-4xl font-heading">Ready to Run Your Own Jobs?</h2>
-          <p className="mt-4 text-base text-white/70">Email us your name, city, and a quick rundown of your truck/trailer setup. We&apos;ll get back to you within 48 hours. Browse open <Link href="/locations" className="text-teal-200 underline">locations</Link> or check out our <Link href="/services" className="text-teal-200 underline">full service list</Link>.</p>
+          <p className="mt-4 text-base text-white/70">Fill out the application below. We&apos;ll get back to you within 48 hours. Browse open <Link href="/locations" className="text-teal-200 underline">locations</Link> or check out our <Link href="/services" className="text-teal-200 underline">full service list</Link>.</p>
           <div className="mt-8">
-            <a href={`mailto:${EMAIL}?subject=Contractor Application`}><span className="inline-block rounded-lg bg-white px-8 py-3.5 text-base font-semibold text-teal-700 shadow-lg transition-colors hover:bg-teal-50 font-cta">Apply Now — Email {EMAIL}</span></a>
+            <Link href="/apply-for-junk-removal-job"><span className="inline-block rounded-lg bg-white px-8 py-3.5 text-base font-semibold text-teal-700 shadow-lg transition-colors hover:bg-teal-50 font-cta">Apply Now — Open Application Form</span></Link>
           </div>
         </div>
       </section>
